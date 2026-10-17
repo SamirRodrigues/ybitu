@@ -128,7 +128,7 @@ const pt = {
     ],
     authorTitle: 'A autora',
     authorBio:
-      'Jucinara de Melo Silva é historiadora, mestre e doutoranda em Educação pela Universidade Federal do Rio Grande do Norte (UFRN). Pesquisa história oral, história pública e educação, e dedica seus estudos às memórias, às narrativas e à educação escolar indígena como elemento central para fortalecer a identidade do povo Potiguara da comunidade Catu, no Rio Grande do Norte.',
+      'Jucinara de Melo Silva é historiadora, mestre e doutoranda em Educação pela Universidade Federal do Rio Grande do Norte (UFRN). Integra a Rede Trajetórias Docentes, onde pesquisa história oral, história pública e educação, e dedica seus estudos às memórias, às narrativas e à educação escolar indígena como elemento central para fortalecer a identidade do povo Potiguara da comunidade Catu, no Rio Grande do Norte.',
     authorPhotoAlt: 'Retrato de Jucinara de Melo Silva',
     illustratorTitle: 'O ilustrador',
     illustratorBio: 'As ilustrações do livro são de Pingo.',
@@ -350,7 +350,7 @@ const es: Copy = {
     ],
     authorTitle: 'La autora',
     authorBio:
-      'Jucinara de Melo Silva es historiadora, magíster y doctoranda en Educación por la Universidad Federal de Río Grande del Norte (UFRN). Investiga historia oral, historia pública y educación, y dedica sus estudios a las memorias, las narraciones y la educación escolar indígena como elemento central para fortalecer la identidad del pueblo Potiguara de la comunidad Catu, en Río Grande del Norte.',
+      'Jucinara de Melo Silva es historiadora, magíster y doctoranda en Educación por la Universidad Federal de Río Grande del Norte (UFRN). Integra la Rede Trajetórias Docentes, donde investiga historia oral, historia pública y educación, y dedica sus estudios a las memorias, las narraciones y la educación escolar indígena como elemento central para fortalecer la identidad del pueblo Potiguara de la comunidad Catu, en Río Grande del Norte.',
     authorPhotoAlt: 'Retrato de Jucinara de Melo Silva',
     illustratorTitle: 'El ilustrador',
     illustratorBio: 'Las ilustraciones del libro son de Pingo.',
