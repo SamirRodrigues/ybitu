@@ -26,7 +26,7 @@ export const research: ResearchItem[] = [
   {
     id: 'dissertacao',
     status: 'published',
-    type: { pt: 'Dissertação de mestrado', es: 'Tesis de maestría' },
+    type: { pt: 'Dissertação de Mestrado', es: 'Tesis de Maestría' },
     title: {
       pt: 'R(existência) nas narrativas de professores do povo Potiguara Catu dos Eleotérios: Memórias da Escola Municipal Indígena João Lino da Silva (1970-2024)',
       es: 'R(existência) nas narrativas de professores do povo Potiguara Catu dos Eleotérios: Memórias da Escola Municipal Indígena João Lino da Silva (1970-2024)',
@@ -41,8 +41,8 @@ export const research: ResearchItem[] = [
     },
     url: 'https://repositorio.ufrn.br/items/aa4b9c1e-1c00-41d2-8ac6-4fa6eac07a8a',
     imageAlt: {
-      pt: 'Capa da dissertação de mestrado',
-      es: 'Portada de la tesis de maestría',
+      pt: 'Capa da dissertação de Mestrado',
+      es: 'Portada de la tesis de Maestría',
     },
   },
   {

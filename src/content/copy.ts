@@ -117,12 +117,13 @@ const pt = {
       'Ybitu e o poder de acordar memórias adormecidas é o primeiro livro infantil de Jucinara de Melo Silva. Ele transforma narrativas orais e memórias compartilhadas por professores potiguara em uma história sensível para crianças.',
       'Pela imaginação, pela oralidade e pelo afeto, o livro convida as crianças a descobrir que a língua, a memória e a identidade são heranças vivas: passam de geração em geração e fortalecem o sentimento de pertencimento.',
     ],
+    narratorsLabel: 'Narradores',
     factsTitle: 'Ficha do livro',
     facts: [
       { label: 'Texto', value: 'Jucinara de Melo Silva' },
       { label: 'Ilustrações', value: 'Pingo' },
       { label: 'Gênero', value: 'Livro infantil' },
-      { label: 'Origem', value: 'Pesquisa de mestrado em Educação, PPGED/UFRN' },
+      { label: 'Origem', value: 'Pesquisa de Mestrado em Educação, PPGED/UFRN' },
       { label: 'Lançamento', value: 'Em breve' },
     ],
     authorTitle: 'A autora',
@@ -138,7 +139,7 @@ const pt = {
   research: {
     title: 'Pesquisa',
     description:
-      'Produções científicas ligadas ao livro Ybitu: dissertação de mestrado e publicações, com links para as páginas oficiais.',
+      'Produções científicas ligadas ao livro Ybitu: dissertação de Mestrado e publicações, com links para as páginas oficiais.',
     intro:
       'O livro nasceu de uma pesquisa feita junto com a comunidade Catu. Aqui ficam as produções científicas ligadas a ele, com links para as páginas oficiais onde foram publicadas.',
     visit: 'Ver na página oficial',
@@ -163,9 +164,9 @@ const pt = {
       'O Catu dos Eleotérios fica entre os municípios de Canguaretama e Goianinha, no Rio Grande do Norte. É o território do povo Potiguara que inspira o livro.',
     schoolTitle: 'A escola',
     schoolText:
-      'A Escola Municipal Indígena João Lino da Silva é a primeira escola indígena do Rio Grande do Norte. Entre os seus professores estão as pessoas que contaram as histórias que deram origem ao livro.',
+      'A Escola Municipal Indígena João Lino da Silva é a primeira escola indígena do Rio Grande do Norte. As histórias que deram origem ao livro foram contadas por professores da comunidade.',
     narratorsTitle: 'Os narradores',
-    narratorsIntro: 'Professores da escola que compartilharam suas memórias em entrevistas públicas na comunidade.',
+    narratorsIntro: 'Professores da comunidade que compartilharam suas memórias em entrevistas públicas.',
     teamTitle: 'Quem fez o livro',
     photoSoon: 'Foto em breve',
   },
@@ -338,12 +339,13 @@ const es: Copy = {
       'Ybitu y el poder de despertar recuerdos dormidos es el primer libro infantil de Jucinara de Melo Silva. Transforma narraciones orales y memorias compartidas por profesores potiguara en una historia sensible para niñas y niños.',
       'Por medio de la imaginación, la oralidad y el afecto, el libro invita a descubrir que la lengua, la memoria y la identidad son herencias vivas: pasan de generación en generación y fortalecen el sentimiento de pertenencia.',
     ],
+    narratorsLabel: 'Narradores',
     factsTitle: 'Ficha del libro',
     facts: [
       { label: 'Texto', value: 'Jucinara de Melo Silva' },
       { label: 'Ilustraciones', value: 'Pingo' },
       { label: 'Género', value: 'Libro infantil' },
-      { label: 'Origen', value: 'Investigación de maestría en Educación, PPGED/UFRN' },
+      { label: 'Origen', value: 'Investigación de Maestría en Educación, PPGED/UFRN' },
       { label: 'Lanzamiento', value: 'Próximamente' },
     ],
     authorTitle: 'La autora',
@@ -359,7 +361,7 @@ const es: Copy = {
   research: {
     title: 'Investigación',
     description:
-      'Producciones científicas ligadas al libro Ybitu: tesis de maestría y publicaciones, con enlaces a las páginas oficiales.',
+      'Producciones científicas ligadas al libro Ybitu: tesis de Maestría y publicaciones, con enlaces a las páginas oficiales.',
     intro:
       'El libro nació de una investigación hecha junto con la comunidad Catu. Aquí están las producciones científicas ligadas a él, con enlaces a las páginas oficiales donde fueron publicadas.',
     visit: 'Ver en la página oficial',
@@ -384,9 +386,9 @@ const es: Copy = {
       'El Catu dos Eleotérios queda entre los municipios de Canguaretama y Goianinha, en Río Grande del Norte (Brasil). Es el territorio del pueblo Potiguara que inspira el libro.',
     schoolTitle: 'La escuela',
     schoolText:
-      'La Escuela Municipal Indígena João Lino da Silva es la primera escuela indígena de Río Grande del Norte. Entre sus profesores están las personas que contaron las historias que dieron origen al libro.',
+      'La Escuela Municipal Indígena João Lino da Silva es la primera escuela indígena de Río Grande del Norte. Las historias que dieron origen al libro fueron contadas por profesores de la comunidad.',
     narratorsTitle: 'Los narradores',
-    narratorsIntro: 'Profesores de la escuela que compartieron sus memorias en entrevistas públicas en la comunidad.',
+    narratorsIntro: 'Profesores de la comunidad que compartieron sus memorias en entrevistas públicas.',
     teamTitle: 'Quiénes hicieron el libro',
     photoSoon: 'Foto próximamente',
   },

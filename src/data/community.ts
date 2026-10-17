@@ -11,17 +11,23 @@ export interface Person {
 export const narrators: Person[] = [
   {
     name: 'Claudiane Soares',
-    role: { pt: 'Professora de tupi', es: 'Profesora de tupí' },
+    role: {
+      pt: 'Professora de Tupi da Escola Municipal Indígena Alfredo Lima - Catu / Goianinha - RN',
+      es: 'Profesora de Tupí de la Escuela Municipal Indígena Alfredo Lima - Catu / Goianinha - RN',
+    },
   },
   {
     name: 'Valda Maria Arcanjo da Silva',
-    role: { pt: 'Professora e diretora da escola', es: 'Profesora y directora de la escuela' },
+    role: {
+      pt: 'Professora e Diretora da Escola Municipal Indígena João Lino da Silva - Catu / Canguaretama - RN',
+      es: 'Profesora y Directora de la Escuela Municipal Indígena João Lino da Silva - Catu / Canguaretama - RN',
+    },
   },
   {
     name: 'Luiz Katu',
     role: {
-      pt: 'Professor de etno-história e cacique da comunidade',
-      es: 'Profesor de etnohistoria y cacique de la comunidad',
+      pt: 'Professor de etno-história da Escola Municipal Indígena João Lino da Silva - Catu / Canguaretama - RN e Cacique da comunidade Catu',
+      es: 'Profesor de etnohistoria de la Escuela Municipal Indígena João Lino da Silva - Catu / Canguaretama - RN y Cacique de la comunidad Catu',
     },
   },
 ];

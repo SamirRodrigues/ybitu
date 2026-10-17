@@ -5,8 +5,9 @@ import Base from '../layouts/Base.astro';
 import BookCover from '../components/BookCover.astro';
 import LeadSection from '../components/LeadSection.astro';
 import { copy } from '../content/copy';
+import { narrators } from '../data/community';
 import { site } from '../config';
-import type { Lang } from '../i18n';
+import { pick, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -39,7 +40,23 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
         <BookCover lang={lang} small />
         <h2 class="sr-only">{b.factsTitle}</h2>
         <dl class="facts">
-          {b.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+          {
+            b.facts.map((fact, index) => (
+              <>
+                <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
+                {index === 1 && (
+                  <div>
+                    <dt>{b.narratorsLabel}</dt>
+                    <dd>
+                      <ul class="fact-people">
+                        {narrators.map((person) => <li><strong>{person.name}</strong><span>{pick(person.role, lang)}</span></li>)}
+                      </ul>
+                    </dd>
+                  </div>
+                )}
+              </>
+            ))
+          }
         </dl>
       </div>
     </div>

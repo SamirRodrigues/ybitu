@@ -961,6 +961,26 @@ a:hover {
   font-weight: 700;
 }
 
+.fact-people {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fact-people li {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.fact-people span {
+  font-weight: 600;
+  color: var(--tinta-suave);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
 .portrait {
   width: 11rem;
   aspect-ratio: 4 / 5;
