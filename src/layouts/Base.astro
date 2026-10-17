@@ -1,0 +1,68 @@
+---
+import '@fontsource/caveat-brush';
+import '@fontsource-variable/nunito';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { copy } from '../content/copy';
+import { site } from '../config';
+import { languages, path, type Lang, type RouteKey } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  route: RouteKey;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
+}
+
+const { lang, route, title, description, jsonLd, noindex = false } = Astro.props;
+const t = copy[lang];
+const fullTitle = route === 'home' ? title : `${title} | ${site.shortName}`;
+const url = (l: Lang) => new URL(path(l, route), site.url).href;
+---
+
+<!doctype html>
+<html lang={t.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f1f1ee" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={url(lang)} />}
+    {!noindex && languages.map((l) => <link rel="alternate" hreflang={l} href={url(l)} />)}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={url('pt')} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url(lang)} />
+    <meta property="og:locale" content={t.ogLocale} />
+    <meta name="twitter:card" content="summary" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">{t.a11y.skip}</a>
+
+    <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+      <filter id="borda-rustica" x="-6%" y="-6%" width="112%" height="112%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="ruido" />
+        <feDisplacementMap in="SourceGraphic" in2="ruido" scale="9" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
+
+    <div class="band band--top" aria-hidden="true">
+      <img src="/textures/triangulos-topo.webp" alt="" width="2000" height="300" fetchpriority="high" />
+    </div>
+    <Header lang={lang} route={route} />
+    <main id="conteudo" tabindex="-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

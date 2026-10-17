@@ -1,0 +1,80 @@
+---
+import fs from 'node:fs';
+import nodePath from 'node:path';
+import Base from '../layouts/Base.astro';
+import BookCover from '../components/BookCover.astro';
+import LeadSection from '../components/LeadSection.astro';
+import { copy } from '../content/copy';
+import { site } from '../config';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = copy[lang];
+const b = t.book;
+
+const authorPhoto = ['webp', 'jpg', 'jpeg', 'png']
+  .map((ext) => `autora.${ext}`)
+  .find((name) => fs.existsSync(nodePath.join(process.cwd(), 'public', 'images', name)));
+const available = site.book.status === 'available' && site.book.buyUrl !== '';
+---
+
+<Base lang={lang} route="book" title={b.title} description={b.description}>
+  <div class="page-head">
+    <div class="wrap">
+      <h1>{b.title}</h1>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:0" aria-labelledby="obra-titulo">
+    <div class="wrap two-col">
+      <div class="stack measure">
+        <h2 id="obra-titulo">{b.aboutTitle}</h2>
+        {b.about.map((paragraph) => <p class="lede">{paragraph}</p>)}
+      </div>
+      <div class="stack">
+        <BookCover lang={lang} small />
+        <h2 class="sr-only">{b.factsTitle}</h2>
+        <dl class="facts">
+          {b.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--stone" aria-labelledby="autora-titulo">
+    <div class="wrap two-col">
+      <div class="stack measure">
+        <h2 id="autora-titulo">{b.authorTitle}</h2>
+        <p>{site.author}</p>
+        <p>{b.authorBio}</p>
+      </div>
+      <div>
+        {
+          authorPhoto ? (
+            <img class="portrait" src={`/images/${authorPhoto}`} alt={b.authorPhotoAlt} width="176" height="220" loading="lazy" />
+          ) : (
+            <div class="portrait placeholder-box" aria-hidden="true">{t.community.photoSoon}</div>
+          )
+        }
+        <p style="margin-top:1.5rem"><strong>{b.illustratorTitle}:</strong> {b.illustratorBio}</p>
+      </div>
+    </div>
+  </section>
+
+  {
+    available ? (
+      <section class="section section--brick on-dark" id="avise-me" aria-labelledby="comprar-titulo">
+        <div class="wrap stack">
+          <h2 id="comprar-titulo">{b.buyTitle}</h2>
+          <p><a class="btn btn--ghost" style="color:#fff;border-color:#fff" href={site.book.buyUrl}>{b.buyNow}</a></p>
+        </div>
+      </section>
+    ) : (
+      <LeadSection lang={lang} title={b.buyTitle} intro={b.buySoon} />
+    )
+  }
+</Base>

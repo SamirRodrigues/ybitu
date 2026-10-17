@@ -1,0 +1,65 @@
+---
+import { copy } from '../content/copy';
+import { path, type Lang, type RouteKey } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  route: RouteKey;
+}
+
+const { lang, route } = Astro.props;
+const t = copy[lang];
+const items: Exclude<RouteKey, 'home' | 'privacy'>[] = ['book', 'research', 'interviews', 'community'];
+---
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href={path(lang, 'home')} aria-label={t.a11y.home} translate="no">Ybitu</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle
+      data-open={t.a11y.openMenu} data-close={t.a11y.closeMenu}>
+      {t.a11y.menu}
+    </button>
+    <div class="site-nav" id="menu" data-menu>
+      <nav aria-label={t.a11y.mainNav}>
+        <ul>
+          {items.map((key) => (
+            <li>
+              <a href={path(lang, key)} aria-current={route === key ? 'page' : undefined}>{t.nav[key]}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <a class="btn btn--small" href={path(lang, 'home', '#avise-me')}>{t.nav.cta}</a>
+      <div class="lang-switch" role="group" aria-label={t.a11y.language}>
+        {lang === 'pt' ? <span aria-current="true" lang="pt">PT</span> : <a href={path('pt', route)} lang="pt" hreflang="pt" aria-label={t.a11y.switchTo}>PT</a>}
+        {lang === 'es' ? <span aria-current="true" lang="es">ES</span> : <a href={path('es', route)} lang="es" hreflang="es" aria-label={t.a11y.switchTo}>ES</a>}
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
+  if (toggle && menu) {
+    const narrow = window.matchMedia('(max-width: 56rem)');
+    const sync = () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      menu.hidden = narrow.matches && !open;
+      toggle.setAttribute('aria-label', open ? toggle.dataset.close! : toggle.dataset.open!);
+    };
+    toggle.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', String(toggle.getAttribute('aria-expanded') !== 'true'));
+      sync();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        toggle.setAttribute('aria-expanded', 'false');
+        sync();
+        toggle.focus();
+      }
+    });
+    narrow.addEventListener('change', sync);
+    sync();
+  }
+</script>

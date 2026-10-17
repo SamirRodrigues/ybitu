@@ -1,0 +1,60 @@
+---
+import { copy } from '../content/copy';
+import { pick, type Lang } from '../i18n';
+import type { InterviewItem } from '../data/interviews';
+
+interface Props {
+  item: InterviewItem;
+  lang: Lang;
+}
+
+const { item, lang } = Astro.props;
+const t = copy[lang];
+const title = pick(item.title, lang);
+const media = item.media;
+---
+
+<article class:list={['media-card', `media-card--${item.kind}`]}>
+  <h2>{title}</h2>
+  {item.narrator && <p class="research-meta">{pick(item.narrator, lang)}</p>}
+
+  {
+    item.kind === 'video' ? (
+      <div class="media-frame">
+        {media?.type === 'file' && (
+          <video controls preload="none" poster={media.poster} src={media.src} title={title}>
+            {media.captions && <track kind="captions" src={media.captions} srclang={media.captionsLang ?? lang} label={t.langName[(media.captionsLang as Lang) ?? lang]} default />}
+          </video>
+        )}
+        {media?.type === 'youtube' && (
+          <button class="load-video" type="button" data-load-video={media.id} data-title={title}>
+            <span>{t.interviews.loadVideo}: {title}</span>
+            <small>{t.interviews.loadVideoNote}</small>
+          </button>
+        )}
+        {!media && (
+          <div class="media-soon">
+            <span class="tri" aria-hidden="true"></span>
+            <span>{t.status.editing}</span>
+          </div>
+        )}
+      </div>
+    ) : media?.type === 'file' ? (
+      <audio controls preload="none" src={media.src} aria-label={title}></audio>
+    ) : (
+      <div class="media-frame media-frame--audio">
+        <div class="media-soon media-soon--audio">
+          <span class="tri" aria-hidden="true"></span>
+          <span>{t.status.editing}</span>
+        </div>
+      </div>
+    )
+  }
+
+  <p>{pick(item.summary, lang)}</p>
+  {item.transcriptUrl && <p><a href={item.transcriptUrl}>{t.interviews.transcript}</a></p>}
+</article>
+
+<script>
+  import '../scripts/youtube';
+</script>

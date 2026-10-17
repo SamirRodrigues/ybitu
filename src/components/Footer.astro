@@ -1,0 +1,32 @@
+---
+import { copy } from '../content/copy';
+import { path, type Lang, type RouteKey } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = copy[lang];
+const items: Exclude<RouteKey, 'home' | 'privacy'>[] = ['book', 'research', 'interviews', 'community'];
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-body">
+    <div class="stack">
+      <p class="brand" aria-hidden="true" translate="no">Ybitu</p>
+      <p class="footer-small">{t.footer.madeWith}</p>
+      <p class="footer-small">© {new Date().getFullYear()} {t.footer.rights}</p>
+    </div>
+    <nav aria-label={t.a11y.footerNav}>
+      <ul class="footer-nav">
+        <li><a href={path(lang, 'home')}>Ybitu</a></li>
+        {items.map((key) => <li><a href={path(lang, key)}>{t.nav[key]}</a></li>)}
+        <li><a href={path(lang, 'privacy')}>{t.footer.privacy}</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="band band--base" aria-hidden="true">
+    <img src="/textures/triangulos-base.webp" alt="" width="2000" height="260" loading="lazy" />
+  </div>
+</footer>

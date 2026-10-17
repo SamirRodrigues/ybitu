@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import LeadSection from '../components/LeadSection.astro';
+import InterviewItem from '../components/InterviewItem.astro';
+import { copy } from '../content/copy';
+import { interviews } from '../data/interviews';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const i = copy[lang].interviews;
+---
+
+<Base lang={lang} route="interviews" title={i.title} description={i.description}>
+  <div class="page-head">
+    <div class="wrap">
+      <h1>{i.title}</h1>
+      <p class="lede">{i.intro}</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:1rem" aria-label={i.title}>
+    <div class="wrap media-grid">
+      {interviews.map((item) => <InterviewItem item={item} lang={lang} />)}
+    </div>
+  </section>
+
+  <LeadSection lang={lang} />
+</Base>

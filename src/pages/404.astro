@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { copy } from '../content/copy';
+import { path } from '../i18n';
+
+const n = copy.pt.notFound;
+---
+
+<Base lang="pt" route="home" title={n.title} description={n.text} noindex>
+  <div class="wrap not-found">
+    <h1>{n.title}</h1>
+    <p class="lede">{n.text}</p>
+    <a class="btn" href={path('pt', 'home')}>{n.back}</a>
+  </div>
+</Base>

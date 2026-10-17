@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import LeadSection from '../components/LeadSection.astro';
+import { copy } from '../content/copy';
+import { narrators, team } from '../data/community';
+import { pick, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = copy[lang];
+const c = t.community;
+const initials = (name: string) =>
+  name
+    .split(' ')
+    .filter((part) => part.length > 2)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('');
+---
+
+<Base lang={lang} route="community" title={c.title} description={c.description}>
+  <div class="page-head">
+    <div class="wrap">
+      <h1>{c.title}</h1>
+      <p class="lede">{c.intro}</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:1rem" aria-labelledby="escola-titulo">
+    <div class="wrap">
+      <div class="stack measure">
+        <h2 id="escola-titulo">{c.schoolTitle}</h2>
+        <p class="lede">{c.schoolText}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sky" aria-labelledby="narradores-titulo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="narradores-titulo">{c.narratorsTitle}</h2>
+        <p>{c.narratorsIntro}</p>
+      </div>
+      <ul class="people">
+        {
+          narrators.map((person) => (
+            <li class="person">
+              <div class="person-photo">
+                {person.photo ? <img src={person.photo} alt="" width="128" height="128" loading="lazy" /> : <span aria-hidden="true">{initials(person.name)}</span>}
+              </div>
+              <h3>{person.name}</h3>
+              <p class="role">{pick(person.role, lang)}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="equipe-titulo">
+    <div class="wrap stack">
+      <h2 id="equipe-titulo">{c.teamTitle}</h2>
+      <ul class="team">
+        {team.map((person) => <li><strong>{person.name}</strong><span class="role">{pick(person.role, lang)}</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <LeadSection lang={lang} />
+</Base>

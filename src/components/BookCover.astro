@@ -1,0 +1,38 @@
+---
+import fs from 'node:fs';
+import nodePath from 'node:path';
+import { copy } from '../content/copy';
+import { site } from '../config';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  small?: boolean;
+}
+
+const { lang, small = false } = Astro.props;
+const t = copy[lang];
+
+/**
+ * Capa real: coloque a frente do livro (quadrada) em public/images/capa.webp (ou .jpg/.png).
+ * Enquanto o arquivo não existir, o site mostra uma capa tipográfica provisória.
+ */
+const file = ['webp', 'jpg', 'jpeg', 'png', 'avif']
+  .map((ext) => `capa.${ext}`)
+  .find((name) => fs.existsSync(nodePath.join(process.cwd(), 'public', 'images', name)));
+---
+
+{
+  file ? (
+    <div class:list={['book-cover', { 'book-cover--small': small }]}>
+      <img class="cover-real" src={`/images/${file}`} alt={t.cover.alt} width="1000" height="1000" />
+    </div>
+  ) : (
+    <div class:list={['book-cover', 'book-cover--provisional', { 'book-cover--small': small }]} role="img" aria-label={t.cover.alt}>
+      <span class="t-lead" translate="no">{t.cover.provisionalTitle}</span>
+      <span class="t-rest">{t.cover.provisionalSubtitle}</span>
+      <span class="t-author">{site.author}</span>
+      <img src="/textures/triangulos-base.webp" alt="" width="2000" height="260" loading="lazy" />
+    </div>
+  )
+}

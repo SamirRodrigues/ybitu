@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+import BookCover from '../components/BookCover.astro';
+import LeadSection from '../components/LeadSection.astro';
+import { copy } from '../content/copy';
+import { site } from '../config';
+import { path, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = copy[lang];
+const h = t.home;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: copy.pt.home.title,
+  inLanguage: 'pt-BR',
+  author: { '@type': 'Person', name: site.author },
+  illustrator: { '@type': 'Person', name: site.illustrator },
+  url: site.url,
+};
+
+const tiles = [
+  { key: 'research', cls: 'tile--stone' },
+  { key: 'interviews', cls: 'tile--yellow' },
+  { key: 'community', cls: 'tile--green' },
+] as const;
+---
+
+<Base lang={lang} route="home" title={h.title} description={h.description} jsonLd={jsonLd}>
+  <section class="hero" aria-labelledby="titulo">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="chip">{t.status.soonLaunch}</p>
+        <h1 id="titulo">
+          <span class="hero-title-lead" translate="no">{h.heroTitleLead}</span>{' '}
+          <span class="hero-title-rest">{h.heroTitleRest}</span>
+        </h1>
+        <p class="hero-intro">{h.heroIntro}</p>
+        <p class="credits">
+          <span>{h.by}</span>
+          <span>{h.illustratedBy}</span>
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#avise-me">{h.ctaPrimary}</a>
+          <a class="btn btn--ghost" href={path(lang, 'book')}>{h.ctaSecondary}</a>
+        </div>
+      </div>
+      <BookCover lang={lang} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ideias-titulo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="ideias-titulo">{h.ideasTitle}</h2>
+      </div>
+      <ul class="ideas">
+        {
+          h.ideas.map((idea) => (
+            <li>
+              <span class="tri" aria-hidden="true"></span>
+              <h3>{idea.title}</h3>
+              <p>{idea.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--sky" aria-labelledby="publicos-titulo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="publicos-titulo">{h.audiencesTitle}</h2>
+      </div>
+      <div class="audiences">
+        <div class="audience">
+          <h3>{h.families.title}</h3>
+          <p>{h.families.text}</p>
+        </div>
+        <div class="audience">
+          <h3>{h.schools.title}</h3>
+          <p>{h.schools.text}</p>
+          <p><a class="btn btn--ghost" href="#avise-me">{t.nav.cta}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="projeto-titulo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projeto-titulo">{h.projectTitle}</h2>
+      </div>
+      <div class="tiles">
+        {
+          tiles.map(({ key, cls }) => (
+            <a class={`tile ${cls}`} href={path(lang, key)}>
+              <h3>{t.nav[key]}</h3>
+              <p>{h.tiles[key]}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <LeadSection lang={lang} />
+</Base>

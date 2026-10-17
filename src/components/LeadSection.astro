@@ -1,0 +1,27 @@
+---
+import LeadForm from './LeadForm.astro';
+import { copy } from '../content/copy';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  id?: string;
+  title?: string;
+  intro?: string;
+}
+
+const { lang, id = 'avise-me', title, intro } = Astro.props;
+const t = copy[lang].lead;
+---
+
+<section class="section section--brick on-dark" id={id} aria-labelledby={`${id}-titulo`}>
+  <div class="wrap lead" data-lead>
+    <div class="stack">
+      <h2 id={`${id}-titulo`}>{title ?? t.title}</h2>
+      <p class="lede">{intro ?? t.intro}</p>
+    </div>
+    <div>
+      <LeadForm lang={lang} id={id} />
+    </div>
+  </div>
+</section>

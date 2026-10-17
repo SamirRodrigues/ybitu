@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { copy } from '../content/copy';
+import { site } from '../config';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const p = copy[lang].privacy;
+---
+
+<Base lang={lang} route="privacy" title={p.title} description={p.description}>
+  <div class="page-head">
+    <div class="wrap">
+      <h1>{p.title}</h1>
+      <p class="lede">{p.updated}</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:1rem" aria-label={p.title}>
+    <div class="wrap prose">
+      {
+        p.sections.map((section) => (
+          <section>
+            <h2>{section.title}</h2>
+            {section.body.map((paragraph) => <p>{paragraph}</p>)}
+          </section>
+        ))
+      }
+      <section>
+        <h2>{p.contactTitle}</h2>
+        {
+          site.contactEmail ? (
+            <p>{p.contactWithEmail} <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</p>
+          ) : (
+            <p>{p.contactNoEmail}</p>
+          )
+        }
+      </section>
+    </div>
+  </section>
+</Base>

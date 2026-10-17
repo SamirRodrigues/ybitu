@@ -1,0 +1,79 @@
+---
+import { copy } from '../content/copy';
+import { site } from '../config';
+import { path, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  /** Prefixo para os ids dos campos, para poder usar o formulário mais de uma vez por página. */
+  id: string;
+}
+
+const { lang, id } = Astro.props;
+const t = copy[lang].lead;
+const messages = JSON.stringify({
+  sending: t.sending,
+  submit: t.submit,
+  errors: t.errors,
+});
+---
+
+<form
+  class="lead-form"
+  method="post"
+  novalidate
+  data-lead-form
+  data-endpoint={site.leadsEndpoint}
+  data-lang={lang}
+  data-messages={messages}
+>
+  <div class="field">
+    <label for={`${id}-nome`}>{t.name}</label>
+    <input id={`${id}-nome`} name="name" type="text" autocomplete="name" required aria-describedby={`${id}-nome-erro`} />
+    <p class="field-error" id={`${id}-nome-erro`} data-error-for="name"></p>
+  </div>
+
+  <div class="field">
+    <label for={`${id}-email`}>{t.email}</label>
+    <input id={`${id}-email`} name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required aria-describedby={`${id}-email-erro`} />
+    <p class="field-error" id={`${id}-email-erro`} data-error-for="email"></p>
+  </div>
+
+  <div class="field">
+    <label for={`${id}-perfil`}>{t.role}</label>
+    <select id={`${id}-perfil`} name="role" autocomplete="off" required aria-describedby={`${id}-perfil-erro`}>
+      <option value="">{t.rolePlaceholder}</option>
+      {Object.entries(t.roles).map(([value, label]) => <option value={value}>{label}</option>)}
+    </select>
+    <p class="field-error" id={`${id}-perfil-erro`} data-error-for="role"></p>
+  </div>
+
+  <div class="field">
+    <label for={`${id}-cidade`}>{t.city}</label>
+    <input id={`${id}-cidade`} name="city" type="text" autocomplete="off" />
+  </div>
+
+  <div class="hp" aria-hidden="true">
+    <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <div class="field">
+    <label class="consent">
+      <input type="checkbox" name="consent" required aria-describedby={`${id}-consent-erro`} />
+      <span>{t.consentBefore} <a href={path(lang, 'privacy')}>{t.consentLink}</a>{t.consentAfter}</span>
+    </label>
+    <p class="field-error" id={`${id}-consent-erro`} data-error-for="consent"></p>
+  </div>
+
+  <p class="form-status" role="status" aria-live="polite" data-status></p>
+  <button class="btn" type="submit" data-submit>{t.submit}</button>
+</form>
+
+<div class="form-success" data-success hidden tabindex="-1">
+  <h3>{t.successTitle}</h3>
+  <p>{t.successText}</p>
+</div>
+
+<script>
+  import '../scripts/lead-form';
+</script>
