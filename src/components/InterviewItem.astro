@@ -1,6 +1,7 @@
 ---
 import { copy } from '../content/copy';
 import { pick, type Lang } from '../i18n';
+import { withBase } from '../url';
 import type { InterviewItem } from '../data/interviews';
 
 interface Props {
@@ -22,8 +23,8 @@ const media = item.media;
     item.kind === 'video' ? (
       <div class="media-frame">
         {media?.type === 'file' && (
-          <video controls preload="none" poster={media.poster} src={media.src} title={title}>
-            {media.captions && <track kind="captions" src={media.captions} srclang={media.captionsLang ?? lang} label={t.langName[(media.captionsLang as Lang) ?? lang]} default />}
+          <video controls preload="none" poster={media.poster && withBase(media.poster)} src={withBase(media.src)} title={title}>
+            {media.captions && <track kind="captions" src={withBase(media.captions)} srclang={media.captionsLang ?? lang} label={t.langName[(media.captionsLang as Lang) ?? lang]} default />}
           </video>
         )}
         {media?.type === 'youtube' && (
@@ -40,7 +41,7 @@ const media = item.media;
         )}
       </div>
     ) : media?.type === 'file' ? (
-      <audio controls preload="none" src={media.src} aria-label={title}></audio>
+      <audio controls preload="none" src={withBase(media.src)} aria-label={title}></audio>
     ) : (
       <div class="media-frame media-frame--audio">
         <div class="media-soon media-soon--audio">

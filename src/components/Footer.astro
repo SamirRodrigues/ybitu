@@ -1,6 +1,7 @@
 ---
 import { copy } from '../content/copy';
 import { path, type Lang, type RouteKey } from '../i18n';
+import { withBase } from '../url';
 
 interface Props {
   lang: Lang;
@@ -27,6 +28,6 @@ const items: Exclude<RouteKey, 'home' | 'privacy'>[] = ['book', 'research', 'int
     </nav>
   </div>
   <div class="band band--base" aria-hidden="true">
-    <img src="/textures/triangulos-base.webp" alt="" width="2000" height="260" loading="lazy" />
+    <img src={withBase('/textures/triangulos-base.webp')} alt="" width="2000" height="260" loading="lazy" />
   </div>
 </footer>

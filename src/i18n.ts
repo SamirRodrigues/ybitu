@@ -1,3 +1,5 @@
+import { withBase } from './url';
+
 export const languages = ['pt', 'es'] as const;
 export type Lang = (typeof languages)[number];
 export const defaultLang: Lang = 'pt';
@@ -24,9 +26,10 @@ const slugs: Record<Lang, Record<RouteKey, string>> = {
 };
 
 export function path(lang: Lang, key: RouteKey, hash = ''): string {
-  const base = lang === defaultLang ? '/' : `/${lang}/`;
+  const prefix = lang === defaultLang ? '/' : `/${lang}/`;
   const slug = slugs[lang][key];
-  return `${base}${slug ? `${slug}/` : ''}${hash}`;
+  const home = withBase(`${prefix}${slug ? `${slug}/` : ''}`);
+  return `${home}${hash}`;
 }
 
 export function otherLang(lang: Lang): Lang {

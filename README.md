@@ -71,15 +71,38 @@ O formulário envia os dados para um script do Google que grava em uma planilha.
 (veja `.env.example`) na hospedagem e publique de novo. Sem essa variável, o formulário avisa que o cadastro
 não está disponível, em vez de fingir que gravou.
 
-## Publicar
+## Publicar no GitHub Pages
 
-O resultado de `npm run build` é uma pasta estática (`dist/`). Serve qualquer hospedagem estática
-(Cloudflare Pages, Netlify, Vercel, GitHub Pages). Configure o domínio `ybituolivro.com.br` e a variável
-`PUBLIC_LEADS_ENDPOINT` lá. O site já gera `sitemap-index.xml` e `robots.txt`.
+O site é estático e é publicado pelo workflow `.github/workflows/deploy.yml` a cada push na `main`
+(ou manualmente em **Actions → Publicar no GitHub Pages → Run workflow**).
+
+**Uma vez só, no GitHub:**
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+2. Coloque o código na `main` (merge do branch de trabalho). O primeiro deploy sai sozinho.
+3. O endereço provisório fica em `https://samirrodrigues.github.io/ybitu/`.
+4. Em **Settings → Secrets and variables → Actions → Variables**, cadastre `PUBLIC_LEADS_ENDPOINT` com a URL do
+   Google Apps Script (veja `docs/google-sheets/README.md`) e rode o workflow de novo. Sem ela o formulário não grava.
+
+**Quando o domínio `ybituolivro.com.br` estiver pronto:**
+
+1. **Settings → Pages → Custom domain:** `ybituolivro.com.br` e marque **Enforce HTTPS** quando liberar.
+2. No painel do domínio (Registro.br), aponte o DNS:
+   - registros `A` do domínio raiz para `185.199.108.153`, `185.199.109.153`, `185.199.110.153` e `185.199.111.153`;
+   - registro `CNAME` de `www` para `samirrodrigues.github.io`.
+   (Confira os números atuais na documentação do GitHub Pages, "Managing a custom domain".)
+3. Em **Variables**, cadastre `SITE_URL` = `https://ybituolivro.com.br` e `BASE_PATH` = `/`, e rode o workflow de novo.
+   Isso troca os endereços do `canonical`, do `sitemap`, do `robots.txt` e dos links internos.
+
+Sem as variáveis `SITE_URL` e `BASE_PATH`, o workflow publica no endereço provisório (`/ybitu`). Para testar localmente
+como ficará no GitHub Pages: `SITE_URL=https://samirrodrigues.github.io BASE_PATH=/ybitu npm run build && npm run preview`
+(no PowerShell: `$env:SITE_URL="https://samirrodrigues.github.io"; $env:BASE_PATH="/ybitu"; npm run build; npm run preview`).
+
+Qualquer hospedagem estática também serve (Cloudflare Pages, Netlify, Vercel): a saída de `npm run build` é a pasta `dist/`.
 
 ## Antes de publicar
 
-- [ ] Criar a planilha e o script, e definir `PUBLIC_LEADS_ENDPOINT` (sem isso nenhum cadastro é gravado).
+- [ ] Criar a planilha e o script, e definir `PUBLIC_LEADS_ENDPOINT` (variável do repositório; sem isso nenhum cadastro é gravado).
 - [ ] Preencher `contactEmail` em `src/config.ts`. A Política de Privacidade precisa de um canal para pedidos de exclusão.
 - [ ] Revisar a Política de Privacidade com quem cuida da parte jurídica (texto-base, não é parecer).
 - [ ] Mostrar os textos da página Comunidade aos narradores e à escola antes de publicar.

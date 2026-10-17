@@ -22,7 +22,7 @@ const jsonLd = {
   inLanguage: 'pt-BR',
   author: { '@type': 'Person', name: site.author },
   illustrator: { '@type': 'Person', name: site.illustrator },
-  url: site.url,
+  url: new URL(path('pt', 'home'), site.url).href,
   ...(cover ? { image: new URL(cover.src, site.url).href } : {}),
 };
 

@@ -21,7 +21,7 @@
   --largura: 72rem;
   --leitura: 40rem;
 
-  --papel-textura: url('/textures/papel.webp');
+  /* --papel-textura é definida no <html> (layouts/Base.astro) porque o caminho depende da base do site. */
 }
 
 *,

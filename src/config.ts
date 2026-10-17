@@ -1,6 +1,7 @@
 /** Configurações do site. Edite aqui o que muda com o tempo. */
 export const site = {
-  url: 'https://ybituolivro.com.br',
+  /** Origem do site (sem caminho). Vem de SITE_URL no build; veja astro.config.mjs. */
+  url: import.meta.env.SITE.replace(/\/$/, ''),
   name: 'Ybitu e o poder de acordar memórias adormecidas',
   shortName: 'Ybitu',
   author: 'Jucinara de Melo Silva',

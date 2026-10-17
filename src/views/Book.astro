@@ -8,6 +8,7 @@ import { copy } from '../content/copy';
 import { narrators } from '../data/community';
 import { site } from '../config';
 import { pick, type Lang } from '../i18n';
+import { withBase } from '../url';
 
 interface Props {
   lang: Lang;
@@ -75,7 +76,7 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
       <div>
         {
           authorPhoto ? (
-            <img class="portrait" src={`/images/${authorPhoto}`} alt={b.authorPhotoAlt} width="176" height="220" loading="lazy" />
+            <img class="portrait" src={withBase(`/images/${authorPhoto}`)} alt={b.authorPhotoAlt} width="176" height="220" loading="lazy" />
           ) : (
             <div class="portrait placeholder-box" aria-hidden="true">{t.community.photoSoon}</div>
           )
@@ -94,7 +95,7 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
       <div>
         {
           illustratorPhoto ? (
-            <img class="portrait" src={`/images/${illustratorPhoto}`} alt={b.illustratorPhotoAlt} width="176" height="220" loading="lazy" />
+            <img class="portrait" src={withBase(`/images/${illustratorPhoto}`)} alt={b.illustratorPhotoAlt} width="176" height="220" loading="lazy" />
           ) : (
             <div class="portrait placeholder-box" aria-hidden="true">{t.community.photoSoon}</div>
           )

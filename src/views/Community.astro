@@ -4,6 +4,7 @@ import LeadSection from '../components/LeadSection.astro';
 import { copy } from '../content/copy';
 import { narrators, team } from '../data/community';
 import { pick, type Lang } from '../i18n';
+import { withBase } from '../url';
 
 interface Props {
   lang: Lang;
@@ -49,7 +50,7 @@ const initials = (name: string) =>
           narrators.map((person) => (
             <li class="person">
               <div class="person-photo">
-                {person.photo ? <img src={person.photo} alt="" width="128" height="128" loading="lazy" /> : <span aria-hidden="true">{initials(person.name)}</span>}
+                {person.photo ? <img src={withBase(person.photo)} alt="" width="128" height="128" loading="lazy" /> : <span aria-hidden="true">{initials(person.name)}</span>}
               </div>
               <h3>{person.name}</h3>
               <p class="role">{pick(person.role, lang)}</p>

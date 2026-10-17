@@ -8,6 +8,7 @@ import { copy } from '../content/copy';
 import { site } from '../config';
 import { cover } from '../cover';
 import { languages, path, type Lang, type RouteKey } from '../i18n';
+import { withBase } from '../url';
 
 interface Props {
   lang: Lang;
@@ -25,7 +26,7 @@ const url = (l: Lang) => new URL(path(l, route), site.url).href;
 ---
 
 <!doctype html>
-<html lang={t.locale}>
+<html lang={t.locale} style={`--papel-textura: url('${withBase('/textures/papel.webp')}')`}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -37,7 +38,7 @@ const url = (l: Lang) => new URL(path(l, route), site.url).href;
     {!noindex && <link rel="canonical" href={url(lang)} />}
     {!noindex && languages.map((l) => <link rel="alternate" hreflang={l} href={url(l)} />)}
     {!noindex && <link rel="alternate" hreflang="x-default" href={url('pt')} />}
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={fullTitle} />
@@ -62,7 +63,7 @@ const url = (l: Lang) => new URL(path(l, route), site.url).href;
     </svg>
 
     <div class="band band--top" aria-hidden="true">
-      <img src="/textures/triangulos-topo.webp" alt="" width="2000" height="300" fetchpriority="high" />
+      <img src={withBase('/textures/triangulos-topo.webp')} alt="" width="2000" height="300" fetchpriority="high" />
     </div>
     <Header lang={lang} route={route} />
     <main id="conteudo" tabindex="-1">

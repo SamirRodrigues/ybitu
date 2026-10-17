@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import nodePath from 'node:path';
+import { withBase } from './url';
 
 /**
  * Capa real do livro: public/images/capa.webp (frente, quadrada, 1000x1000).
@@ -17,7 +18,7 @@ const small = find('capa-640');
 
 export const cover = full
   ? {
-      src: `/images/${full}`,
-      srcset: small ? `/images/${small} 640w, /images/${full} 1000w` : undefined,
+      src: withBase(`/images/${full}`),
+      srcset: small ? `${withBase(`/images/${small}`)} 640w, ${withBase(`/images/${full}`)} 1000w` : undefined,
     }
   : undefined;

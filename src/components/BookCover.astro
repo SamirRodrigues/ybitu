@@ -2,6 +2,7 @@
 import { copy } from '../content/copy';
 import { site } from '../config';
 import { cover } from '../cover';
+import { withBase } from '../url';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -24,7 +25,7 @@ const sizes = small ? '(min-width: 56rem) 272px, 80vw' : '(min-width: 56rem) 416
       <span class="t-lead" translate="no">{t.cover.provisionalTitle}</span>
       <span class="t-rest">{t.cover.provisionalSubtitle}</span>
       <span class="t-author">{site.author}</span>
-      <img src="/textures/triangulos-base.webp" alt="" width="2000" height="260" loading="lazy" />
+      <img src={withBase('/textures/triangulos-base.webp')} alt="" width="2000" height="260" loading="lazy" />
     </div>
   )
 }
