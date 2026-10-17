@@ -824,6 +824,11 @@ a:hover {
   background-image: linear-gradient(90deg, var(--amarelo) 0.45rem, transparent 0.45rem);
 }
 
+.field-hint {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 .field-error {
   min-height: 0;
   font-weight: 800;

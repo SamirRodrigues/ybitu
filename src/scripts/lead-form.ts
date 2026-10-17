@@ -4,6 +4,7 @@ interface Messages {
   errors: {
     required: string;
     email: string;
+    phone: string;
     role: string;
     consent: string;
     network: string;
@@ -12,6 +13,13 @@ interface Messages {
 }
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/** Telefone: só dígitos, espaço, +, parênteses, ponto e hífen, com 8 a 15 dígitos (cobre números do Brasil e do exterior). */
+function validPhone(value: string): boolean {
+  if (!/^[+()\d\s.-]+$/.test(value)) return false;
+  const digits = value.replace(/\D/g, '').length;
+  return digits >= 8 && digits <= 15;
+}
 
 function init(form: HTMLFormElement) {
   const messages = JSON.parse(form.dataset.messages ?? '{}') as Messages;
@@ -39,6 +47,7 @@ function init(form: HTMLFormElement) {
 
     check('name', value('name').length > 0, messages.errors.required);
     check('email', value('email').length > 0 && EMAIL.test(value('email')), value('email') ? messages.errors.email : messages.errors.required);
+    check('phone', validPhone(value('phone')), value('phone') ? messages.errors.phone : messages.errors.required);
     check('role', value('role').length > 0, messages.errors.role);
     check('consent', (control('consent') as HTMLInputElement).checked, messages.errors.consent);
     return firstInvalid;
@@ -75,6 +84,7 @@ function init(form: HTMLFormElement) {
     const payload = {
       name: String(data.get('name') ?? '').trim(),
       email: String(data.get('email') ?? '').trim(),
+      phone: String(data.get('phone') ?? '').trim(),
       role: String(data.get('role') ?? ''),
       city: String(data.get('city') ?? '').trim(),
       consent: true,

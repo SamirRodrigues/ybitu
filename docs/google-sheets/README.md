@@ -23,7 +23,7 @@ Teste pelo terminal, sem abrir o site. O teste grava uma linha de verdade na pla
 
 ```powershell
 $url  = "COLE_A_URL_AQUI"
-$body = '{"name":"Teste","email":"teste@exemplo.com","role":"reader","city":"","consent":true,"lang":"pt","page":"/"}'
+$body = '{"name":"Teste","email":"teste@exemplo.com","phone":"(84) 91234-5678","role":"reader","city":"","consent":true,"lang":"pt","page":"/"}'
 Invoke-RestMethod -Method Post -Uri $url -ContentType "text/plain;charset=utf-8" -Body $body
 # resposta esperada: ok : True
 ```
@@ -33,7 +33,7 @@ Invoke-RestMethod -Method Post -Uri $url -ContentType "text/plain;charset=utf-8"
 ```bash
 curl -L -X POST "COLE_A_URL_AQUI" \
   -H "Content-Type: text/plain;charset=utf-8" \
-  -d '{"name":"Teste","email":"teste@exemplo.com","role":"reader","city":"","consent":true,"lang":"pt","page":"/"}'
+  -d '{"name":"Teste","email":"teste@exemplo.com","phone":"(84) 91234-5678","role":"reader","city":"","consent":true,"lang":"pt","page":"/"}'
 # resposta esperada: {"ok":true}
 ```
 

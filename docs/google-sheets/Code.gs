@@ -4,7 +4,8 @@
  */
 
 const SHEET_NAME = 'Interessados';
-const HEADERS = ['Data e hora', 'Nome', 'E-mail', 'Perfil', 'Cidade/UF', 'Idioma', 'Página', 'Consentimento'];
+// A coluna Telefone fica por último para não deslocar as colunas de cadastros antigos.
+const HEADERS = ['Data e hora', 'Nome', 'E-mail', 'Perfil', 'Cidade/UF', 'Idioma', 'Página', 'Consentimento', 'Telefone'];
 const ROLES = {
   reader: 'Leitor(a) ou família',
   teacher: 'Professor(a)',
@@ -13,6 +14,7 @@ const ROLES = {
   other: 'Outro',
 };
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const PHONE_CHARS = /^[+()\d\s.-]+$/;
 
 /**
  * Alerta por e-mail a cada cadastro. Deixe vazio para avisar o dono deste script (a conta que o implantou),
@@ -51,15 +53,18 @@ function doPost(e) {
 function validate_(data) {
   const name = clean_(data.name, 120);
   const email = clean_(data.email, 200).toLowerCase();
+  const phone = clean_(data.phone, 40);
   const city = clean_(data.city, 120);
   const page = clean_(data.page, 200);
   const lang = data.lang === 'es' ? 'es' : 'pt';
 
   if (!name || !EMAIL.test(email)) return null;
+  const digits = phone.replace(/\D/g, '').length;
+  if (!PHONE_CHARS.test(phone) || digits < 8 || digits > 15) return null;
   if (data.consent !== true) return null;
   if (!Object.prototype.hasOwnProperty.call(ROLES, data.role)) return null;
 
-  return { name, email, role: ROLES[data.role], city, lang, page };
+  return { name, email, phone, role: ROLES[data.role], city, lang, page };
 }
 
 function clean_(value, max) {
@@ -69,7 +74,7 @@ function clean_(value, max) {
 function save_(entry) {
   const sheet = getSheet_();
   const now = new Date();
-  const values = [now, entry.name, entry.email, entry.role, entry.city, entry.lang, entry.page, 'Sim'];
+  const values = [now, entry.name, entry.email, entry.role, entry.city, entry.lang, entry.page, 'Sim', entry.phone];
 
   // Mesmo e-mail de novo: atualiza a linha em vez de duplicar.
   const lastRow = sheet.getLastRow();
@@ -104,6 +109,7 @@ function notify_(entry, isNew) {
       '',
       'Nome: ' + entry.name,
       'E-mail: ' + entry.email,
+      'Telefone: ' + entry.phone,
       'Perfil: ' + entry.role,
       'Cidade/UF: ' + (entry.city || '(não informado)'),
       'Idioma: ' + entry.lang,
@@ -134,7 +140,7 @@ function recipients_() {
  * o Google pede a permissão de enviar e-mails e manda um alerta de teste.
  */
 function testarAlerta() {
-  notify_({ name: 'Teste do alerta', email: 'teste@exemplo.com', role: 'Outro', city: '', lang: 'pt', page: '/' }, true);
+  notify_({ name: 'Teste do alerta', email: 'teste@exemplo.com', phone: '(84) 91234-5678', role: 'Outro', city: '', lang: 'pt', page: '/' }, true);
 }
 
 function getSheet_() {
@@ -143,7 +149,8 @@ function getSheet_() {
   if (!sheet) {
     sheet = book.insertSheet(SHEET_NAME);
   }
-  if (sheet.getLastRow() === 0) {
+  if (sheet.getLastRow() === 0 || sheet.getRange(1, HEADERS.length).getValue() === '') {
+    // Planilha nova, ou criada antes da coluna Telefone: escreve/completa o cabeçalho.
     sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]).setFontWeight('bold');
     sheet.setFrozenRows(1);
   }

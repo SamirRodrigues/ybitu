@@ -40,6 +40,13 @@ const messages = JSON.stringify({
   </div>
 
   <div class="field">
+    <label for={`${id}-telefone`}>{t.phone}</label>
+    <input id={`${id}-telefone`} name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby={`${id}-telefone-dica ${id}-telefone-erro`} />
+    <p class="field-hint" id={`${id}-telefone-dica`}>{t.phoneHint}</p>
+    <p class="field-error" id={`${id}-telefone-erro`} data-error-for="phone"></p>
+  </div>
+
+  <div class="field">
     <label for={`${id}-perfil`}>{t.role}</label>
     <select id={`${id}-perfil`} name="role" autocomplete="off" required aria-describedby={`${id}-perfil-erro`}>
       <option value="">{t.rolePlaceholder}</option>

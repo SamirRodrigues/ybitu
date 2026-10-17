@@ -84,6 +84,8 @@ const pt = {
       'O livro está em pré-venda e, por enquanto, só está disponível pelo formulário abaixo. Temos poucas unidades. Deixe seu contato e retornaremos com as informações para garantir o seu. Usamos seus dados só para falar do livro e do projeto.',
     name: 'Nome',
     email: 'E-mail',
+    phone: 'Telefone',
+    phoneHint: 'Com DDD. Pode ser o número do WhatsApp.',
     role: 'Você é',
     rolePlaceholder: 'Escolha uma opção',
     roles: {
@@ -104,6 +106,7 @@ const pt = {
     errors: {
       required: 'Preencha este campo.',
       email: 'Digite um e-mail válido, como nome@exemplo.com.',
+      phone: 'Digite um telefone válido, com DDD. Exemplo: (84) 91234-5678.',
       role: 'Escolha uma opção.',
       consent: 'Marque a caixa para continuar.',
       network: 'Não foi possível enviar agora. Confira sua conexão e tente de novo.',
@@ -191,14 +194,14 @@ const pt = {
       {
         title: 'Quais dados coletamos',
         body: [
-          'Quando você preenche o formulário da pré-venda, pedimos nome, e-mail e o seu perfil (por exemplo, família, professor(a) ou escola). A cidade e o estado são opcionais.',
+          'Quando você preenche o formulário da pré-venda, pedimos nome, e-mail, telefone e o seu perfil (por exemplo, família, professor(a) ou escola). A cidade e o estado são opcionais.',
           'Também guardamos a data e a hora do cadastro e o idioma da página em que ele foi feito.',
         ],
       },
       {
         title: 'Para que usamos',
         body: [
-          'Usamos esses dados apenas para entrar em contato sobre a pré-venda do livro, as formas de compra e as novidades do projeto. Não vendemos nem compartilhamos sua lista de contatos.',
+          'Usamos esses dados apenas para entrar em contato, por e-mail ou telefone, sobre a pré-venda do livro, as formas de compra e as novidades do projeto. Não vendemos nem compartilhamos sua lista de contatos.',
         ],
       },
       {
@@ -319,6 +322,8 @@ const es: Copy = {
       'El libro está en preventa y, por ahora, solo está disponible mediante el formulario de abajo. Tenemos pocas unidades. Deja tu contacto y te responderemos con la información para asegurar el tuyo. Usamos tus datos solo para hablarte del libro y del proyecto.',
     name: 'Nombre',
     email: 'Correo electrónico',
+    phone: 'Teléfono',
+    phoneHint: 'Con código de país si es de fuera de Brasil. Puede ser tu número de WhatsApp.',
     role: 'Eres',
     rolePlaceholder: 'Elige una opción',
     roles: {
@@ -339,6 +344,7 @@ const es: Copy = {
     errors: {
       required: 'Completa este campo.',
       email: 'Escribe un correo válido, como nombre@ejemplo.com.',
+      phone: 'Escribe un teléfono válido, con código de país. Ejemplo: +54 11 1234-5678.',
       role: 'Elige una opción.',
       consent: 'Marca la casilla para continuar.',
       network: 'No se pudo enviar ahora. Revisa tu conexión e inténtalo de nuevo.',
@@ -426,14 +432,14 @@ const es: Copy = {
       {
         title: 'Qué datos recogemos',
         body: [
-          'Cuando completas el formulario de la preventa, pedimos nombre, correo electrónico y tu perfil (por ejemplo, familia, profesor(a) o escuela). La ciudad y el país son opcionales.',
+          'Cuando completas el formulario de la preventa, pedimos nombre, correo electrónico, teléfono y tu perfil (por ejemplo, familia, profesor(a) o escuela). La ciudad y el país son opcionales.',
           'También guardamos la fecha y la hora del registro y el idioma de la página en la que se hizo.',
         ],
       },
       {
         title: 'Para qué los usamos',
         body: [
-          'Usamos estos datos solo para contactarte sobre la preventa del libro, las formas de compra y las novedades del proyecto. No vendemos ni compartimos tu lista de contactos.',
+          'Usamos estos datos solo para contactarte, por correo o teléfono, sobre la preventa del libro, las formas de compra y las novedades del proyecto. No vendemos ni compartimos tu lista de contactos.',
         ],
       },
       {
