@@ -14,6 +14,14 @@ const ROLES = {
 };
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+/**
+ * Alerta por e-mail a cada cadastro. Deixe vazio para avisar o dono deste script (a conta que o implantou),
+ * ou liste um ou mais e-mails separados por vírgula: 'a@exemplo.com, b@exemplo.com'.
+ * Para desligar os alertas, use NOTIFY = false.
+ */
+const NOTIFY = true;
+const NOTIFY_EMAILS = '';
+
 function doGet() {
   return json_({ ok: true, service: 'ybitu-interessados' });
 }
@@ -29,7 +37,8 @@ function doPost(e) {
     const entry = validate_(data);
     if (!entry) return json_({ ok: false, error: 'invalid' });
 
-    save_(entry);
+    const isNew = save_(entry);
+    notify_(entry, isNew); // nunca derruba o cadastro: se o e-mail falhar, a linha já está salva
     return json_({ ok: true });
   } catch (err) {
     console.error(err);
@@ -80,6 +89,52 @@ function save_(entry) {
   sheet.getRange(row, 2, 1, HEADERS.length - 1).setNumberFormat('@');
   range.setValues([values]);
   sheet.getRange(row, 1).setNumberFormat('dd/MM/yyyy HH:mm:ss');
+  return row === lastRow + 1; // true se for uma pessoa nova; false se o mesmo e-mail atualizou uma linha
+}
+
+/** Avisa por e-mail (texto puro) que alguém preencheu o formulário. */
+function notify_(entry, isNew) {
+  if (!NOTIFY) return;
+  try {
+    const to = recipients_();
+    if (!to) return;
+    const book = SpreadsheetApp.getActiveSpreadsheet();
+    const lines = [
+      isNew ? 'Novo cadastro na pré-venda do livro Ybitu.' : 'Cadastro atualizado (o mesmo e-mail preencheu o formulário de novo).',
+      '',
+      'Nome: ' + entry.name,
+      'E-mail: ' + entry.email,
+      'Perfil: ' + entry.role,
+      'Cidade/UF: ' + (entry.city || '(não informado)'),
+      'Idioma: ' + entry.lang,
+      'Página: ' + entry.page,
+      '',
+      'Planilha: ' + book.getUrl(),
+    ];
+    MailApp.sendEmail({
+      to: to,
+      subject: '[Ybitu] ' + (isNew ? 'Nova reserva' : 'Reserva atualizada') + ': ' + entry.name,
+      body: lines.join('\n'),
+      replyTo: entry.email, // "Responder" no seu e-mail já escreve para a pessoa
+      name: 'Site Ybitu',
+    });
+  } catch (err) {
+    console.error('Falha ao enviar o alerta: ' + err);
+  }
+}
+
+function recipients_() {
+  const list = NOTIFY_EMAILS.split(',').map(function (item) { return item.trim(); }).filter(function (item) { return EMAIL.test(item); });
+  if (list.length) return list.join(',');
+  return Session.getEffectiveUser().getEmail();
+}
+
+/**
+ * Rode esta função UMA vez no editor (botão "Executar") depois de colar o código:
+ * o Google pede a permissão de enviar e-mails e manda um alerta de teste.
+ */
+function testarAlerta() {
+  notify_({ name: 'Teste do alerta', email: 'teste@exemplo.com', role: 'Outro', city: '', lang: 'pt', page: '/' }, true);
 }
 
 function getSheet_() {

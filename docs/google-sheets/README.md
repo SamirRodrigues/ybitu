@@ -39,6 +39,29 @@ curl -L -X POST "COLE_A_URL_AQUI" \
 
 Troque `COLE_A_URL_AQUI` pela URL do app da Web (a que termina em `/exec`), mantendo as aspas.
 
+## Alerta por e-mail a cada cadastro
+
+O `Code.gs` envia um e-mail para você sempre que o formulário é preenchido, com nome, e-mail, perfil, cidade e o
+link da planilha. Ao clicar em "Responder" no e-mail, a resposta já vai para a pessoa que se cadastrou.
+
+**Para ativar (uma vez, depois de colar o `Code.gs` novo):**
+
+1. No editor do Apps Script, escolha a função **`testarAlerta`** na lista ao lado do botão **Executar** e clique em **Executar**.
+2. O Google pede permissão para enviar e-mails. Clique em **Revisar permissões**, escolha sua conta e, se aparecer
+   "app não verificado", vá em **Avançado → Acessar (não seguro)** e **Permitir**. É o seu próprio script.
+3. Confira a caixa de entrada (e o spam): deve chegar o e-mail "[Ybitu] Nova reserva: Teste do alerta".
+4. **Atualize a implantação** (sem isso o site continua usando a versão antiga): **Implantar → Gerenciar implantações →
+   lápis (Editar) → Versão: Nova versão → Implantar**. A URL continua a mesma.
+
+**Opções no topo do `Code.gs`:**
+
+- `NOTIFY_EMAILS`: vazio avisa a conta dona do script. Para avisar outras pessoas: `'a@exemplo.com, b@exemplo.com'`.
+- `NOTIFY = false` desliga os alertas.
+
+**Limites:** contas Gmail comuns enviam até cerca de 100 e-mails por dia pelo Apps Script; contas Google Workspace, mais.
+Se o limite estourar, o cadastro continua sendo gravado, só o e-mail deixa de ser enviado. Se a mesma pessoa preencher
+o formulário de novo com o mesmo e-mail, a linha é atualizada e o alerta diz "Reserva atualizada".
+
 ## Usar a lista
 
 - Cada pessoa vira uma linha. Se a mesma pessoa se cadastrar de novo com o mesmo e-mail, a linha é atualizada.
