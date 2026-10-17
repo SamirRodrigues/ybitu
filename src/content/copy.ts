@@ -131,6 +131,7 @@ const pt = {
     authorBio:
       'Jucinara de Melo Silva é historiadora, mestre e doutoranda em Educação pela Universidade Federal do Rio Grande do Norte (UFRN). Integra a Rede Trajetórias Docentes, onde pesquisa história oral, história pública e educação, e dedica seus estudos às memórias, às narrativas e à educação escolar indígena como elemento central para fortalecer a identidade do povo Potiguara da comunidade Catu, no Rio Grande do Norte.',
     authorPhotoAlt: 'Retrato de Jucinara de Melo Silva',
+    lattes: 'Currículo Lattes',
     illustratorTitle: 'O ilustrador',
     illustratorName: 'Clayton Pereira (Pingo)',
     illustratorBio:
@@ -143,10 +144,15 @@ const pt = {
   research: {
     title: 'Pesquisa',
     description:
-      'Produções científicas ligadas ao livro Ybitu: dissertação de Mestrado e publicações, com links para as páginas oficiais.',
+      'Produções científicas ligadas ao livro Ybitu: dissertação de Mestrado e capítulos de livro, com PDFs para baixar e referências para citar.',
     intro:
-      'O livro nasceu de uma pesquisa feita junto com a comunidade Catu. Aqui ficam as produções científicas ligadas a ele, com links para as páginas oficiais onde foram publicadas.',
+      'O livro nasceu de uma pesquisa feita junto com a comunidade Catu. Aqui ficam as produções científicas ligadas a ele, com links para as páginas oficiais e arquivos para baixar e citar.',
     visit: 'Ver na página oficial',
+    download: 'Baixar o PDF',
+    cite: 'Como citar (ABNT)',
+    copy: 'Copiar referência',
+    copied: 'Referência copiada.',
+    copyFailed: 'Não foi possível copiar. Selecione o texto e copie.',
   },
   interviews: {
     title: 'Entrevistas',
@@ -357,6 +363,7 @@ const es: Copy = {
     authorBio:
       'Jucinara de Melo Silva es historiadora, magíster y doctoranda en Educación por la Universidad Federal de Río Grande del Norte (UFRN). Integra la Rede Trajetórias Docentes, donde investiga historia oral, historia pública y educación, y dedica sus estudios a las memorias, las narraciones y la educación escolar indígena como elemento central para fortalecer la identidad del pueblo Potiguara de la comunidad Catu, en Río Grande del Norte.',
     authorPhotoAlt: 'Retrato de Jucinara de Melo Silva',
+    lattes: 'Currículum Lattes',
     illustratorTitle: 'El ilustrador',
     illustratorName: 'Clayton Pereira (Pingo)',
     illustratorBio:
@@ -369,10 +376,15 @@ const es: Copy = {
   research: {
     title: 'Investigación',
     description:
-      'Producciones científicas ligadas al libro Ybitu: tesis de Maestría y publicaciones, con enlaces a las páginas oficiales.',
+      'Producciones científicas ligadas al libro Ybitu: tesis de Maestría y capítulos de libro, con PDF para descargar y referencias para citar.',
     intro:
-      'El libro nació de una investigación hecha junto con la comunidad Catu. Aquí están las producciones científicas ligadas a él, con enlaces a las páginas oficiales donde fueron publicadas.',
+      'El libro nació de una investigación hecha junto con la comunidad Catu. Aquí están las producciones científicas ligadas a él, con enlaces a las páginas oficiales y archivos para descargar y citar.',
     visit: 'Ver en la página oficial',
+    download: 'Descargar el PDF',
+    cite: 'Cómo citar (ABNT)',
+    copy: 'Copiar referencia',
+    copied: 'Referencia copiada.',
+    copyFailed: 'No se pudo copiar. Selecciona el texto y cópialo.',
   },
   interviews: {
     title: 'Entrevistas',

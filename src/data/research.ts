@@ -12,6 +12,18 @@ export interface ResearchItem {
   /** Link para a página oficial onde a obra foi publicada. */
   url?: string;
   /**
+   * PDF para baixar no próprio site: nome do arquivo em public/downloads/.
+   * O build falha se o arquivo não existir, para não publicar um link quebrado.
+   */
+  download?: string;
+  /**
+   * Referência ABNT (NBR 6023). Use **dois asteriscos** para o negrito do título da obra.
+   * A referência fica em português nos dois idiomas, porque é uma convenção brasileira.
+   */
+  citation?: string;
+  /** Cor da capa provisória. */
+  tone?: 'tijolo' | 'pedra' | 'amarelo';
+  /**
    * Imagem do material: coloque o arquivo em public/images/pesquisa/<id>.webp (ou .jpg/.png).
    * Sem arquivo, o site mostra uma capa provisória.
    */
@@ -44,6 +56,50 @@ export const research: ResearchItem[] = [
       pt: 'Capa da dissertação de Mestrado',
       es: 'Portada de la tesis de Maestría',
     },
+  },
+  {
+    id: 'capitulo-todo-professor-indigena',
+    status: 'published',
+    tone: 'pedra',
+    type: { pt: 'Capítulo de livro', es: 'Capítulo de libro' },
+    title: {
+      pt: '“Todo professor indígena é uma liderança”: narrativas de resistência na comunidade Catu dos Eleotérios/RN',
+      es: '“Todo professor indígena é uma liderança”: narrativas de resistência na comunidade Catu dos Eleotérios/RN',
+    },
+    meta: {
+      pt: 'Jucinara de Melo Silva, Aliny Dayany Pereira de Medeiros Pranto e José Luiz Soares',
+      es: 'Jucinara de Melo Silva, Aliny Dayany Pereira de Medeiros Pranto y José Luiz Soares',
+    },
+    summary: {
+      pt: 'A partir de entrevistas públicas feitas na comunidade, o capítulo mostra como os professores indígenas do Catu atuam também como lideranças: a docência se liga às lutas do território, e a educação escolar indígena no Rio Grande do Norte é construída pelas comunidades e por seus professores.',
+      es: 'A partir de entrevistas públicas realizadas en la comunidad, el capítulo muestra cómo los profesores indígenas del Catu actúan también como liderazgos: la docencia se vincula con las luchas del territorio, y la educación escolar indígena en Río Grande del Norte es construida por las comunidades y por sus profesores.',
+    },
+    download: 'todo-professor-indigena-e-uma-lideranca.pdf',
+    citation:
+      'SILVA, Jucinara de Melo; PRANTO, Aliny Dayany Pereira de Medeiros; SOARES, José Luiz. “Todo professor indígena é uma liderança”: narrativas de resistência na comunidade Catu dos Eleotérios/RN. In: PRANTO, Aliny Dayany Pereira de Medeiros (org.). **Oralidades, educação e política**: desafios e perspectivas em um contexto de revisionismo histórico. João Pessoa: Ideia, 2026. p. 159-176.',
+    imageAlt: { pt: 'Capa do capítulo', es: 'Portada del capítulo' },
+  },
+  {
+    id: 'capitulo-narrativas-docentes',
+    status: 'published',
+    tone: 'amarelo',
+    type: { pt: 'Capítulo de livro', es: 'Capítulo de libro' },
+    title: {
+      pt: 'Narrativas docentes do povo potiguara do Catu: a retomada de uma língua ancestral',
+      es: 'Narrativas docentes do povo potiguara do Catu: a retomada de uma língua ancestral',
+    },
+    meta: {
+      pt: 'Jucinara de Melo Silva, Aliny Dayany de Medeiros Pranto e Claudiane Soares',
+      es: 'Jucinara de Melo Silva, Aliny Dayany de Medeiros Pranto y Claudiane Soares',
+    },
+    summary: {
+      pt: 'O capítulo acompanha a retomada da língua tupi no Catu pela trajetória da professora Claudiane Soares, a primeira docente de tupi da comunidade. Discute os desafios de ensinar uma língua que já não era falada e o papel da escola indígena nesse processo.',
+      es: 'El capítulo acompaña la recuperación de la lengua tupí en el Catu a través de la trayectoria de la profesora Claudiane Soares, la primera docente de tupí de la comunidad. Discute los desafíos de enseñar una lengua que ya no se hablaba y el papel de la escuela indígena en ese proceso.',
+    },
+    download: 'narrativas-docentes-do-povo-potiguara-do-catu.pdf',
+    citation:
+      'SILVA, Jucinara de Melo; PRANTO, Aliny Dayany de Medeiros; SOARES, Claudiane. Narrativas docentes do povo potiguara do Catu: a retomada de uma língua ancestral. In: CHADWICK, Geraldine; MANENTE, Mayra Ileana; BARZOTTO, Valdir Heitor (org.). **Justicia social en memorias culturales, prácticas lingüísticas y ambientales**. Buenos Aires: [s. n.], 2026. p. 42-58.',
+    imageAlt: { pt: 'Capa do capítulo', es: 'Portada del capítulo' },
   },
   {
     id: 'novas-publicacoes',

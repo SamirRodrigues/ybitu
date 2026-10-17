@@ -15,6 +15,23 @@ const t = copy[lang];
 const image = ['webp', 'jpg', 'jpeg', 'png']
   .map((ext) => `${item.id}.${ext}`)
   .find((name) => fs.existsSync(nodePath.join(process.cwd(), 'public', 'images', 'pesquisa', name)));
+
+let downloadHref: string | undefined;
+let downloadSize = '';
+if (item.download) {
+  const file = nodePath.join(process.cwd(), 'public', 'downloads', item.download);
+  if (!fs.existsSync(file)) {
+    throw new Error(`Arquivo para download não encontrado: public/downloads/${item.download} (item "${item.id}")`);
+  }
+  downloadHref = `/downloads/${item.download}`;
+  const bytes = fs.statSync(file).size;
+  const format = new Intl.NumberFormat(t.locale, { maximumFractionDigits: 1 });
+  downloadSize = bytes >= 1024 * 1024 ? `${format.format(bytes / 1024 / 1024)} MB` : `${format.format(Math.round(bytes / 1024))} KB`;
+}
+
+// **negrito** na referência: partes ímpares do split são o texto em destaque.
+const citationParts = item.citation?.split('**') ?? [];
+const citationPlain = citationParts.join('');
 ---
 
 <li class="research-item">
@@ -24,7 +41,7 @@ const image = ['webp', 'jpg', 'jpeg', 'png']
         <img src={`/images/pesquisa/${image}`} alt={item.imageAlt ? pick(item.imageAlt, lang) : ''} width="208" height="277" loading="lazy" />
       </div>
     ) : (
-      <div class:list={['doc-cover', { 'doc-cover--soon': item.status === 'soon' }]} aria-hidden="true">
+      <div class:list={['doc-cover', item.status === 'soon' ? 'doc-cover--soon' : item.tone ? `doc-cover--${item.tone}` : undefined]} aria-hidden="true">
         <span class="doc-label">{pick(item.type, lang)}</span>
         <img src="/textures/triangulos-base.webp" alt="" width="2000" height="260" loading="lazy" />
       </div>
@@ -32,17 +49,46 @@ const image = ['webp', 'jpg', 'jpeg', 'png']
   }
   <div class="research-body">
     <p class="research-type">{pick(item.type, lang)}</p>
-    <h2 lang={item.id === 'dissertacao' ? 'pt-BR' : undefined}>{pick(item.title, lang)}</h2>
+    <h2 lang={item.id === 'novas-publicacoes' ? undefined : 'pt-BR'}>{pick(item.title, lang)}</h2>
     {item.meta && <p class="research-meta">{pick(item.meta, lang)}</p>}
     <p>{pick(item.summary, lang)}</p>
+
     {
-      item.url ? (
-        <a class="btn" href={item.url} target="_blank" rel="noopener noreferrer">
-          {t.research.visit} <span class="sr-only">{t.a11y.opensNewTab}</span>
-        </a>
+      (downloadHref || item.url) ? (
+        <div class="research-actions">
+          {downloadHref && (
+            <a class="btn" href={downloadHref} download>
+              {t.research.download} <span class="btn-meta">({downloadSize})</span>
+            </a>
+          )}
+          {item.url && (
+            <a class:list={['btn', { 'btn--ghost': downloadHref }]} href={item.url} target="_blank" rel="noopener noreferrer">
+              {t.research.visit} <span class="sr-only">{t.a11y.opensNewTab}</span>
+            </a>
+          )}
+        </div>
       ) : (
         <p><span class="chip">{t.status.soon}</span></p>
       )
     }
+
+    {
+      item.citation && (
+        <div class="citation" data-citation>
+          <h3>{t.research.cite}</h3>
+          <p class="citation-text" lang="pt-BR" data-citation-text>
+            {citationParts.map((part, index) => (index % 2 === 1 ? <strong>{part}</strong> : part))}
+          </p>
+          <button class="btn btn--ghost btn--small" type="button" data-copy-citation data-text={citationPlain} data-copied={t.research.copied} data-failed={t.research.copyFailed}>
+            {t.research.copy}
+          </button>
+          <p class="form-status citation-status" role="status" aria-live="polite" data-copy-status></p>
+        </div>
+      )
+    }
   </div>
 </li>
+
+<script>
+  import '../scripts/copy-citation';
+</script>

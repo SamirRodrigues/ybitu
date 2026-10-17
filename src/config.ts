@@ -5,6 +5,7 @@ export const site = {
   shortName: 'Ybitu',
   author: 'Jucinara de Melo Silva',
   illustrator: 'Pingo',
+  authorLattes: 'http://lattes.cnpq.br/9001409872153739',
 
   /**
    * E-mail para pedidos de acesso, correção ou exclusão de dados (LGPD).

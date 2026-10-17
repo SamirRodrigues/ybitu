@@ -68,6 +68,9 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
         <h2 id="autora-titulo">{b.authorTitle}</h2>
         <p>{site.author}</p>
         <p>{b.authorBio}</p>
+        <p>
+          <a href={site.authorLattes} target="_blank" rel="noopener noreferrer">{b.lattes} <span class="sr-only">{t.a11y.opensNewTab}</span></a>
+        </p>
       </div>
       <div>
         {

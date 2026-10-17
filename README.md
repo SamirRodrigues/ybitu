@@ -45,6 +45,12 @@ Imagens opcionais, que o site usa assim que o arquivo existir (sem mexer em cód
 - `public/images/pesquisa/<id>.webp`: imagem de cada produção (`id` é o do `research.ts`, por exemplo `dissertacao.webp`).
 - `public/images/pessoas/…`: fotos dos narradores (informe o caminho em `community.ts`).
 
+Para publicar uma produção científica com PDF para baixar e referência ABNT, coloque o arquivo em
+`public/downloads/` e preencha `download` e `citation` em `src/data/research.ts`. O build falha se o arquivo
+não existir, para nunca publicar um link quebrado. Para recortar um capítulo de um e-book e gravar título e
+autoria no PDF: `python3 scripts/prepare-pdf.py livro.pdf capitulo.pdf --first 42 --last 58 --title "…" --author "…"`
+(as páginas são as do arquivo, não as impressas no livro; requer `pip install pypdf`).
+
 Para publicar uma entrevista, preencha `media` em `src/data/interviews.ts`:
 
 ```ts
