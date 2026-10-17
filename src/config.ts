@@ -12,7 +12,7 @@ export const site = {
    * E-mail para pedidos de acesso, correção ou exclusão de dados (LGPD).
    * Preencha antes de publicar: a página de privacidade só mostra o contato quando houver valor.
    */
-  contactEmail: '',
+  contactEmail: 'jucinaramelo@outlook.com',
 
   /**
    * Situação da venda. Hoje: pré-venda, só pelo formulário do site.

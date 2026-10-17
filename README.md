@@ -104,7 +104,6 @@ Qualquer hospedagem estática também serve (Cloudflare Pages, Netlify, Vercel):
 ## Antes de publicar
 
 - [ ] Testar o formulário no site publicado e conferir se a linha aparece na planilha.
-- [ ] Preencher `contactEmail` em `src/config.ts`. A Política de Privacidade precisa de um canal para pedidos de exclusão.
 - [ ] Revisar a Política de Privacidade com quem cuida da parte jurídica (texto-base, não é parecer).
 - [ ] Mostrar os textos da página Comunidade aos narradores e à escola antes de publicar.
 - [ ] Revisar o espanhol com uma pessoa nativa ou fluente.
