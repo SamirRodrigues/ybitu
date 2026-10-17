@@ -6,6 +6,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { copy } from '../content/copy';
 import { site } from '../config';
+import { cover } from '../cover';
 import { languages, path, type Lang, type RouteKey } from '../i18n';
 
 interface Props {
@@ -43,6 +44,10 @@ const url = (l: Lang) => new URL(path(l, route), site.url).href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url(lang)} />
     <meta property="og:locale" content={t.ogLocale} />
+    {cover && <meta property="og:image" content={new URL(cover.src, site.url).href} />}
+    {cover && <meta property="og:image:width" content="1000" />}
+    {cover && <meta property="og:image:height" content="1000" />}
+    {cover && <meta name="twitter:image" content={new URL(cover.src, site.url).href} />}
     <meta name="twitter:card" content="summary" />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>

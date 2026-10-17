@@ -1,8 +1,7 @@
 ---
-import fs from 'node:fs';
-import nodePath from 'node:path';
 import { copy } from '../content/copy';
 import { site } from '../config';
+import { cover } from '../cover';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -12,20 +11,13 @@ interface Props {
 
 const { lang, small = false } = Astro.props;
 const t = copy[lang];
-
-/**
- * Capa real: coloque a frente do livro (quadrada) em public/images/capa.webp (ou .jpg/.png).
- * Enquanto o arquivo não existir, o site mostra uma capa tipográfica provisória.
- */
-const file = ['webp', 'jpg', 'jpeg', 'png', 'avif']
-  .map((ext) => `capa.${ext}`)
-  .find((name) => fs.existsSync(nodePath.join(process.cwd(), 'public', 'images', name)));
+const sizes = small ? '(min-width: 56rem) 272px, 80vw' : '(min-width: 56rem) 416px, 90vw';
 ---
 
 {
-  file ? (
+  cover ? (
     <div class:list={['book-cover', { 'book-cover--small': small }]}>
-      <img class="cover-real" src={`/images/${file}`} alt={t.cover.alt} width="1000" height="1000" />
+      <img class="cover-real" src={cover.src} srcset={cover.srcset} sizes={sizes} alt={t.cover.alt} width="1000" height="1000" fetchpriority={small ? undefined : 'high'} decoding="async" />
     </div>
   ) : (
     <div class:list={['book-cover', 'book-cover--provisional', { 'book-cover--small': small }]} role="img" aria-label={t.cover.alt}>

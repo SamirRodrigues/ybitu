@@ -4,6 +4,7 @@ import BookCover from '../components/BookCover.astro';
 import LeadSection from '../components/LeadSection.astro';
 import { copy } from '../content/copy';
 import { site } from '../config';
+import { cover } from '../cover';
 import { path, type Lang } from '../i18n';
 
 interface Props {
@@ -22,6 +23,7 @@ const jsonLd = {
   author: { '@type': 'Person', name: site.author },
   illustrator: { '@type': 'Person', name: site.illustrator },
   url: site.url,
+  ...(cover ? { image: new URL(cover.src, site.url).href } : {}),
 };
 
 const tiles = [

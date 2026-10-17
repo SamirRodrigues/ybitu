@@ -40,7 +40,7 @@ npm run check    # confere tipos e textos faltando em algum idioma
 
 Imagens opcionais, que o site usa assim que o arquivo existir (sem mexer em código):
 
-- `public/images/capa.webp` (ou `.jpg`/`.png`): frente do livro, **quadrada** (o livro é em formato quadrado). Sem o arquivo, o site mostra uma capa tipográfica provisória.
+- `public/images/capa.webp` (ou `.jpg`/`.png`): frente do livro, **quadrada** (o livro é em formato quadrado), 1000×1000. Opcional: `capa-640.webp`, versão menor para celulares. Sem o arquivo, o site mostra uma capa tipográfica provisória. A capa também vira a imagem de compartilhamento em redes (`og:image`).
 - `public/images/autora.webp`: retrato da autora, na página do livro.
 - `public/images/pesquisa/<id>.webp`: imagem de cada produção (`id` é o do `research.ts`, por exemplo `dissertacao.webp`).
 - `public/images/pessoas/…`: fotos dos narradores (informe o caminho em `community.ts`).
@@ -78,9 +78,8 @@ O resultado de `npm run build` é uma pasta estática (`dist/`). Serve qualquer 
 - [ ] Revisar a Política de Privacidade com quem cuida da parte jurídica (texto-base, não é parecer).
 - [ ] Mostrar os textos da página Comunidade aos narradores e à escola antes de publicar.
 - [ ] Revisar o espanhol com uma pessoa nativa ou fluente.
-- [ ] Trocar a capa provisória pela capa real (`public/images/capa.webp`) e incluir a foto da autora.
+- [ ] Incluir a foto da autora (`public/images/autora.webp`).
 - [ ] Conferir a grafia do título: o site usa **Ybitu**, mas o texto do livro (PDF) está como "Ybytu".
-- [ ] Imagem para compartilhamento em redes (`og:image`) ainda não existe.
 
 ## Design
 
