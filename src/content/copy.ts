@@ -36,11 +36,11 @@ const pt = {
   home: {
     title: 'Ybitu e o poder de acordar memórias adormecidas',
     description:
-      'Livro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nascido das histórias de professores potiguara da comunidade Catu (RN). Cadastre-se para saber do lançamento.',
+      'Livro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nascido das histórias de professores potiguaras da comunidade Catu (RN). Cadastre-se para saber do lançamento.',
     heroTitleLead: 'Ybitu',
     heroTitleRest: 'e o poder de acordar memórias adormecidas',
     heroIntro:
-      'Um livro infantil que nasceu das histórias contadas por professores potiguara da comunidade Catu, no Rio Grande do Norte, sobre a sua língua, a sua escola e o seu povo.',
+      'Um livro infantil que nasceu das histórias contadas por professores potiguaras da comunidade Catu, no Rio Grande do Norte, sobre a sua língua, a sua escola e o seu povo.',
     by: 'Texto de Jucinara de Melo Silva',
     illustratedBy: 'Ilustrações de Pingo',
     ctaPrimary: 'Avise-me do lançamento',
@@ -114,7 +114,7 @@ const pt = {
       'Sobre Ybitu e o poder de acordar memórias adormecidas, a autora Jucinara de Melo Silva e o ilustrador Pingo.',
     aboutTitle: 'Sobre a obra',
     about: [
-      'Ybitu e o poder de acordar memórias adormecidas é o primeiro livro infantil de Jucinara de Melo Silva. Ele transforma narrativas orais e memórias compartilhadas por professores potiguara em uma história sensível para crianças.',
+      'Ybitu e o poder de acordar memórias adormecidas é o primeiro livro infantil de Jucinara de Melo Silva, escrito em conjunto com os professores potiguaras da comunidade Catu/RN. Ele transforma narrativas orais e memórias compartilhadas por esses docentes em uma história sensível para crianças.',
       'Pela imaginação, pela oralidade e pelo afeto, o livro convida as crianças a descobrir que a língua, a memória e a identidade são heranças vivas: passam de geração em geração e fortalecem o sentimento de pertencimento.',
     ],
     narratorsLabel: 'Narradores',
@@ -147,7 +147,7 @@ const pt = {
   interviews: {
     title: 'Entrevistas',
     description:
-      'Vídeos e áudios das entrevistas públicas feitas com professores potiguara na comunidade Catu.',
+      'Vídeos e áudios das entrevistas públicas feitas com professores potiguaras na comunidade Catu.',
     intro:
       'Conversas públicas gravadas na comunidade Catu, com os professores que guardam a história da escola. As gravações aparecem aqui assim que a edição terminar.',
     video: 'Vídeo',
@@ -258,11 +258,11 @@ const es: Copy = {
   home: {
     title: 'Ybitu y el poder de despertar recuerdos dormidos',
     description:
-      'Libro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nacido de las historias de profesores potiguara de la comunidad Catu (RN, Brasil). Regístrate para saber del lanzamiento.',
+      'Libro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nacido de las historias de profesores potiguaras de la comunidad Catu (RN, Brasil). Regístrate para saber del lanzamiento.',
     heroTitleLead: 'Ybitu',
     heroTitleRest: 'y el poder de despertar recuerdos dormidos',
     heroIntro:
-      'Un libro infantil que nació de las historias contadas por profesores potiguara de la comunidad Catu, en Río Grande del Norte (Brasil), sobre su lengua, su escuela y su pueblo.',
+      'Un libro infantil que nació de las historias contadas por profesores potiguaras de la comunidad Catu, en Río Grande del Norte (Brasil), sobre su lengua, su escuela y su pueblo.',
     by: 'Texto de Jucinara de Melo Silva',
     illustratedBy: 'Ilustraciones de Pingo',
     ctaPrimary: 'Avísame del lanzamiento',
@@ -336,7 +336,7 @@ const es: Copy = {
       'Sobre Ybitu y el poder de despertar recuerdos dormidos, la autora Jucinara de Melo Silva y el ilustrador Pingo.',
     aboutTitle: 'Sobre la obra',
     about: [
-      'Ybitu y el poder de despertar recuerdos dormidos es el primer libro infantil de Jucinara de Melo Silva. Transforma narraciones orales y memorias compartidas por profesores potiguara en una historia sensible para niñas y niños.',
+      'Ybitu y el poder de despertar recuerdos dormidos es el primer libro infantil de Jucinara de Melo Silva, escrito en conjunto con los profesores potiguaras de la comunidad Catu (Río Grande del Norte). Transforma narraciones orales y memorias compartidas por esos docentes en una historia sensible para niñas y niños.',
       'Por medio de la imaginación, la oralidad y el afecto, el libro invita a descubrir que la lengua, la memoria y la identidad son herencias vivas: pasan de generación en generación y fortalecen el sentimiento de pertenencia.',
     ],
     narratorsLabel: 'Narradores',
@@ -369,7 +369,7 @@ const es: Copy = {
   interviews: {
     title: 'Entrevistas',
     description:
-      'Videos y audios de las entrevistas públicas hechas a profesores potiguara en la comunidad Catu.',
+      'Videos y audios de las entrevistas públicas hechas a profesores potiguaras en la comunidad Catu.',
     intro:
       'Conversaciones públicas grabadas en la comunidad Catu, con los profesores que guardan la historia de la escuela. Las grabaciones aparecerán aquí apenas termine la edición.',
     video: 'Video',

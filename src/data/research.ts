@@ -36,8 +36,8 @@ export const research: ResearchItem[] = [
       es: 'Jucinara de Melo Silva. Programa de Posgrado en Educación, UFRN',
     },
     summary: {
-      pt: 'Investiga como a Escola Municipal Indígena João Lino da Silva, a primeira escola indígena do Rio Grande do Norte, vive na memória de seus professores, e de que modo essa memória fortalece as lutas e as resistências da comunidade Catu. A pesquisa parte de entrevistas públicas feitas no território e deu origem ao livro.',
-      es: 'Investiga cómo la Escuela Municipal Indígena João Lino da Silva, la primera escuela indígena de Río Grande del Norte, vive en la memoria de sus profesores, y de qué modo esa memoria fortalece las luchas y las resistencias de la comunidad Catu. La investigación parte de entrevistas públicas hechas en el territorio y dio origen al libro.',
+      pt: 'Investiga como a Escola Municipal Indígena João Lino da Silva, a primeira escola indígena do Rio Grande do Norte, vive na memória de seus professores e como essa memória fortalece as lutas e as resistências da comunidade Catu. A pesquisa parte de entrevistas públicas feitas no território e deu origem ao livro.',
+      es: 'Investiga cómo la Escuela Municipal Indígena João Lino da Silva, la primera escuela indígena de Río Grande del Norte, vive en la memoria de sus profesores y cómo esa memoria fortalece las luchas y las resistencias de la comunidad Catu. La investigación parte de entrevistas públicas hechas en el territorio y dio origen al libro.',
     },
     url: 'https://repositorio.ufrn.br/items/aa4b9c1e-1c00-41d2-8ac6-4fa6eac07a8a',
     imageAlt: {
