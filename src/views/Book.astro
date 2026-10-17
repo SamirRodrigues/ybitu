@@ -17,9 +17,13 @@ const { lang } = Astro.props;
 const t = copy[lang];
 const b = t.book;
 
-const authorPhoto = ['webp', 'jpg', 'jpeg', 'png']
-  .map((ext) => `autora.${ext}`)
-  .find((name) => fs.existsSync(nodePath.join(process.cwd(), 'public', 'images', name)));
+// Retratos opcionais: public/images/autora.webp e public/images/ilustrador.webp (ou .jpg/.png).
+const portrait = (base: string) =>
+  ['webp', 'jpg', 'jpeg', 'png']
+    .map((ext) => `${base}.${ext}`)
+    .find((name) => fs.existsSync(nodePath.join(process.cwd(), 'public', 'images', name)));
+const authorPhoto = portrait('autora');
+const illustratorPhoto = portrait('ilustrador');
 const available = site.book.status === 'available' && site.book.buyUrl !== '';
 ---
 
@@ -77,7 +81,25 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
             <div class="portrait placeholder-box" aria-hidden="true">{t.community.photoSoon}</div>
           )
         }
-        <p style="margin-top:1.5rem"><strong>{b.illustratorTitle}:</strong> {b.illustratorBio}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ilustrador-titulo">
+    <div class="wrap two-col">
+      <div class="stack measure">
+        <h2 id="ilustrador-titulo">{b.illustratorTitle}</h2>
+        <p>{b.illustratorName}</p>
+        <p>{b.illustratorBio}</p>
+      </div>
+      <div>
+        {
+          illustratorPhoto ? (
+            <img class="portrait" src={`/images/${illustratorPhoto}`} alt={b.illustratorPhotoAlt} width="176" height="220" loading="lazy" />
+          ) : (
+            <div class="portrait placeholder-box" aria-hidden="true">{t.community.photoSoon}</div>
+          )
+        }
       </div>
     </div>
   </section>

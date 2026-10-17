@@ -131,7 +131,10 @@ const pt = {
       'Jucinara de Melo Silva é historiadora, mestre e doutoranda em Educação pela Universidade Federal do Rio Grande do Norte (UFRN). Integra a Rede Trajetórias Docentes, onde pesquisa história oral, história pública e educação, e dedica seus estudos às memórias, às narrativas e à educação escolar indígena como elemento central para fortalecer a identidade do povo Potiguara da comunidade Catu, no Rio Grande do Norte.',
     authorPhotoAlt: 'Retrato de Jucinara de Melo Silva',
     illustratorTitle: 'O ilustrador',
-    illustratorBio: 'As ilustrações do livro são de Pingo.',
+    illustratorName: 'Clayton Pereira (Pingo)',
+    illustratorBio:
+      'Clayton Pereira, conhecido artisticamente como Pingo, é ilustrador infantil e apaixonado pelo poder das histórias. Encontra na ilustração uma forma de dar vida a mundos mágicos, despertar a imaginação e transmitir valores e reflexões às crianças. Participar da obra Ybitu e o poder de acordar memórias adormecidas foi uma experiência marcante, que reforçou sua admiração pela riqueza da cultura dos povos originários e pela importância de preservar a língua tupi como parte da memória e da identidade brasileira.',
+    illustratorPhotoAlt: 'Retrato de Clayton Pereira, o Pingo',
     buyTitle: 'Onde comprar',
     buySoon: 'O livro ainda não está à venda. Deixe seu contato e avisamos assim que as vendas abrirem.',
     buyNow: 'Comprar o livro',
@@ -353,7 +356,10 @@ const es: Copy = {
       'Jucinara de Melo Silva es historiadora, magíster y doctoranda en Educación por la Universidad Federal de Río Grande del Norte (UFRN). Integra la Rede Trajetórias Docentes, donde investiga historia oral, historia pública y educación, y dedica sus estudios a las memorias, las narraciones y la educación escolar indígena como elemento central para fortalecer la identidad del pueblo Potiguara de la comunidad Catu, en Río Grande del Norte.',
     authorPhotoAlt: 'Retrato de Jucinara de Melo Silva',
     illustratorTitle: 'El ilustrador',
-    illustratorBio: 'Las ilustraciones del libro son de Pingo.',
+    illustratorName: 'Clayton Pereira (Pingo)',
+    illustratorBio:
+      'Clayton Pereira, conocido artísticamente como Pingo, es ilustrador infantil y apasionado por el poder de las historias. Encuentra en la ilustración una forma de dar vida a mundos mágicos, despertar la imaginación y transmitir valores y reflexiones a las niñas y los niños. Participar en la obra Ybitu y el poder de despertar recuerdos dormidos fue una experiencia inolvidable, que reforzó su admiración por la riqueza de la cultura de los pueblos originarios y por la importancia de preservar la lengua tupí como parte de la memoria y de la identidad brasileña.',
+    illustratorPhotoAlt: 'Retrato de Clayton Pereira, Pingo',
     buyTitle: 'Dónde comprar',
     buySoon: 'El libro todavía no está a la venta. Deja tu contacto y te avisamos apenas se abran las ventas.',
     buyNow: 'Comprar el libro',
