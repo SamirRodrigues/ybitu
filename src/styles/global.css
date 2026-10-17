@@ -1281,6 +1281,21 @@ a:hover {
   gap: 0.1rem;
 }
 
+.team-group {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1.75rem;
+  border-top: 2px dashed rgba(43, 36, 32, 0.35);
+}
+
+.team-group h3 {
+  font-family: var(--fonte-pincel);
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.05;
+}
+
 .team .role {
   color: var(--tinta-suave);
   font-weight: 700;

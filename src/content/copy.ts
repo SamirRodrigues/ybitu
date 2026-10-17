@@ -167,6 +167,8 @@ const pt = {
     narratorsTitle: 'Os narradores',
     narratorsIntro: 'Professores da escola que compartilharam suas memórias em entrevistas públicas na comunidade.',
     teamTitle: 'Quem fez o livro',
+    teamNarratorsTitle: 'Narradores da comunidade Catu',
+    teamNarratorsText: 'Membros da comunidade que permitiram que esta pesquisa fosse realizada.',
     photoSoon: 'Foto em breve',
   },
   privacy: {
@@ -388,6 +390,8 @@ const es: Copy = {
     narratorsTitle: 'Los narradores',
     narratorsIntro: 'Profesores de la escuela que compartieron sus memorias en entrevistas públicas en la comunidad.',
     teamTitle: 'Quiénes hicieron el libro',
+    teamNarratorsTitle: 'Narradores de la comunidad Catu',
+    teamNarratorsText: 'Miembros de la comunidad que hicieron posible esta investigación.',
     photoSoon: 'Foto próximamente',
   },
   privacy: {

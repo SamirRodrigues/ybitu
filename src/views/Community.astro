@@ -66,6 +66,13 @@ const initials = (name: string) =>
       <ul class="team">
         {team.map((person) => <li><strong>{person.name}</strong><span class="role">{pick(person.role, lang)}</span></li>)}
       </ul>
+      <div class="team-group">
+        <h3>{c.teamNarratorsTitle}</h3>
+        <p>{c.teamNarratorsText}</p>
+        <ul class="team">
+          {narrators.map((person) => <li><strong>{person.name}</strong><span class="role">{pick(person.role, lang)}</span></li>)}
+        </ul>
+      </div>
     </div>
   </section>
 
