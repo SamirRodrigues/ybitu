@@ -49,7 +49,7 @@ const initials = (name: string) =>
         {
           narrators.map((person) => (
             <li class="person">
-              <div class="person-photo">
+              <div class:list={['person-photo', { 'person-photo--img': person.photo }]}>
                 {person.photo ? <img src={withBase(person.photo)} alt="" width="128" height="128" loading="lazy" /> : <span aria-hidden="true">{initials(person.name)}</span>}
               </div>
               <h3>{person.name}</h3>

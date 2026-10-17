@@ -76,7 +76,7 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
       <div>
         {
           authorPhoto ? (
-            <img class="portrait" src={withBase(`/images/${authorPhoto}`)} alt={b.authorPhotoAlt} width="176" height="220" loading="lazy" />
+            <img class="portrait" src={withBase(`/images/${authorPhoto}`)} alt={b.authorPhotoAlt} width="176" height="176" loading="lazy" />
           ) : (
             <div class="portrait placeholder-box" aria-hidden="true">{t.community.photoSoon}</div>
           )
@@ -95,7 +95,7 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
       <div>
         {
           illustratorPhoto ? (
-            <img class="portrait" src={withBase(`/images/${illustratorPhoto}`)} alt={b.illustratorPhotoAlt} width="176" height="220" loading="lazy" />
+            <img class="portrait" src={withBase(`/images/${illustratorPhoto}`)} alt={b.illustratorPhotoAlt} width="176" height="176" loading="lazy" />
           ) : (
             <div class="portrait placeholder-box" aria-hidden="true">{t.community.photoSoon}</div>
           )

@@ -41,9 +41,9 @@ npm run check    # confere tipos e textos faltando em algum idioma
 Imagens opcionais, que o site usa assim que o arquivo existir (sem mexer em código):
 
 - `public/images/capa.webp` (ou `.jpg`/`.png`): frente do livro, **quadrada** (o livro é em formato quadrado), 1000×1000. Opcional: `capa-640.webp`, versão menor para celulares. Sem o arquivo, o site mostra uma capa tipográfica provisória. A capa também vira a imagem de compartilhamento em redes (`og:image`).
-- `public/images/autora.webp` e `public/images/ilustrador.webp`: retratos da autora e do ilustrador, na página do livro.
+- `public/images/autora.webp` e `public/images/ilustrador.webp`: retratos redondos da autora e do ilustrador, na página do livro (quadrados, a partir de 400 px; o site corta em círculo).
 - `public/images/pesquisa/<id>.webp`: imagem de cada produção (`id` é o do `research.ts`, por exemplo `dissertacao.webp`).
-- `public/images/pessoas/…`: fotos dos narradores (informe o caminho em `community.ts`).
+- `public/images/pessoas/…`: fotos dos narradores (o caminho já está em `community.ts`). Troque o arquivo por uma foto quadrada de melhor qualidade quando tiver.
 
 Para publicar uma produção científica com PDF para baixar e referência ABNT, coloque o arquivo em
 `public/downloads/` e preencha `download` e `citation` em `src/data/research.ts`. O build falha se o arquivo
@@ -108,7 +108,7 @@ Qualquer hospedagem estática também serve (Cloudflare Pages, Netlify, Vercel):
 - [ ] Revisar a Política de Privacidade com quem cuida da parte jurídica (texto-base, não é parecer).
 - [ ] Mostrar os textos da página Comunidade aos narradores e à escola antes de publicar.
 - [ ] Revisar o espanhol com uma pessoa nativa ou fluente.
-- [ ] Incluir as fotos da autora e do ilustrador (`public/images/autora.webp` e `ilustrador.webp`).
+- [ ] Trocar as fotos recortadas do livro (cerca de 200 px, ficam um pouco suaves em telas grandes) por fotos originais quadradas de pelo menos 400 px.
 - [ ] Conferir a grafia do título: o site usa **Ybitu**, mas o texto do livro (PDF) está como "Ybytu".
 
 ## Design

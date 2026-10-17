@@ -1039,9 +1039,10 @@ a:hover {
 
 .portrait {
   width: 11rem;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 14px;
+  border: 6px solid var(--capim);
+  border-radius: 50%;
 }
 
 .placeholder-box {
@@ -1364,7 +1365,12 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 4px solid var(--capim);
   border-radius: 50%;
+}
+
+.person-photo--img::before {
+  display: none;
 }
 
 .person:nth-child(1) .person-photo {
