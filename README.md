@@ -74,28 +74,28 @@ não está disponível, em vez de fingir que gravou.
 ## Publicar no GitHub Pages
 
 O site é estático e é publicado pelo workflow `.github/workflows/deploy.yml` a cada push na `main`
-(ou manualmente em **Actions → Publicar no GitHub Pages → Run workflow**).
+(ou manualmente em **Actions → Publicar no GitHub Pages → Run workflow**). Ele publica em `https://ybituolivro.com.br`.
 
 **Uma vez só, no GitHub:**
 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-2. Coloque o código na `main` (merge do branch de trabalho). O primeiro deploy sai sozinho.
-3. O endereço provisório fica em `https://samirrodrigues.github.io/ybitu/`.
+2. **Settings → Pages → Custom domain:** `ybituolivro.com.br`. Quando o GitHub liberar, marque **Enforce HTTPS**.
+3. Coloque o código na `main` (merge do branch de trabalho). O primeiro deploy sai sozinho.
 4. Em **Settings → Secrets and variables → Actions → Variables**, cadastre `PUBLIC_LEADS_ENDPOINT` com a URL do
    Google Apps Script (veja `docs/google-sheets/README.md`) e rode o workflow de novo. Sem ela o formulário não grava.
 
-**Quando o domínio `ybituolivro.com.br` estiver pronto:**
+**DNS do domínio (no painel onde ele foi registrado, por exemplo Registro.br):**
 
-1. **Settings → Pages → Custom domain:** `ybituolivro.com.br` e marque **Enforce HTTPS** quando liberar.
-2. No painel do domínio (Registro.br), aponte o DNS:
-   - registros `A` do domínio raiz para `185.199.108.153`, `185.199.109.153`, `185.199.110.153` e `185.199.111.153`;
-   - registro `CNAME` de `www` para `samirrodrigues.github.io`.
-   (Confira os números atuais na documentação do GitHub Pages, "Managing a custom domain".)
-3. Em **Variables**, cadastre `SITE_URL` = `https://ybituolivro.com.br` e `BASE_PATH` = `/`, e rode o workflow de novo.
-   Isso troca os endereços do `canonical`, do `sitemap`, do `robots.txt` e dos links internos.
+- registros `A` do domínio raiz (`ybituolivro.com.br`) para `185.199.108.153`, `185.199.109.153`,
+  `185.199.110.153` e `185.199.111.153`;
+- registro `CNAME` de `www` para `samirrodrigues.github.io`.
 
-Sem as variáveis `SITE_URL` e `BASE_PATH`, o workflow publica no endereço provisório (`/ybitu`). Para testar localmente
-como ficará no GitHub Pages: `SITE_URL=https://samirrodrigues.github.io BASE_PATH=/ybitu npm run build && npm run preview`
+(Confira os números atuais na documentação do GitHub Pages, "Managing a custom domain". A propagação pode levar
+de minutos a algumas horas.)
+
+**Testar sem o domínio:** o endereço provisório é `https://samirrodrigues.github.io/ybitu/`. Para publicar nele,
+cadastre as variáveis `SITE_URL` = `https://samirrodrigues.github.io` e `BASE_PATH` = `/ybitu`.
+Para testar localmente como ficaria: `SITE_URL=https://samirrodrigues.github.io BASE_PATH=/ybitu npm run build && npm run preview`
 (no PowerShell: `$env:SITE_URL="https://samirrodrigues.github.io"; $env:BASE_PATH="/ybitu"; npm run build; npm run preview`).
 
 Qualquer hospedagem estática também serve (Cloudflare Pages, Netlify, Vercel): a saída de `npm run build` é a pasta `dist/`.
