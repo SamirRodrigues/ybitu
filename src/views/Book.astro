@@ -34,35 +34,31 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
     </div>
   </div>
 
-  <section class="section" style="padding-top:0" aria-labelledby="obra-titulo">
-    <div class="wrap two-col">
+  <section class="section section--flush" aria-labelledby="obra-titulo">
+    <div class="wrap about-grid">
+      <BookCover lang={lang} />
       <div class="stack measure">
         <h2 id="obra-titulo">{b.aboutTitle}</h2>
+        <p class="about-hook">{b.hook}</p>
         {b.about.map((paragraph) => <p class="lede">{paragraph}</p>)}
       </div>
-      <div class="stack">
-        <BookCover lang={lang} small />
-        <h2 class="sr-only">{b.factsTitle}</h2>
-        <dl class="facts">
-          {
-            b.facts.map((fact, index) => (
-              <>
-                <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
-                {index === 1 && (
-                  <div>
-                    <dt>{b.narratorsLabel}</dt>
-                    <dd>
-                      <ul class="fact-people">
-                        {narrators.map((person) => <li><strong>{person.name}</strong><span>{pick(person.role, lang)}</span></li>)}
-                      </ul>
-                    </dd>
-                  </div>
-                )}
-              </>
-            ))
-          }
-        </dl>
-      </div>
+    </div>
+  </section>
+
+  <section class="section section--flush" aria-labelledby="ficha-titulo">
+    <div class="wrap stack">
+      <h2 id="ficha-titulo">{b.factsTitle}</h2>
+      <dl class="facts facts--row">
+        {b.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+        <div class="facts-wide">
+          <dt>{b.narratorsLabel}</dt>
+          <dd>
+            <ul class="fact-people fact-people--cols">
+              {narrators.map((person) => <li><strong>{person.name}</strong><span>{pick(person.role, lang)}</span></li>)}
+            </ul>
+          </dd>
+        </div>
+      </dl>
     </div>
   </section>
 

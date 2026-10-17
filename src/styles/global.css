@@ -924,6 +924,10 @@ a:hover {
   gap: 1.25rem;
 }
 
+.stack > p + p {
+  margin-top: 0;
+}
+
 .two-col {
   display: grid;
   gap: 2.5rem;
@@ -961,6 +965,29 @@ a:hover {
   font-weight: 700;
 }
 
+.facts--row {
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.facts--row > div {
+  align-content: start;
+  padding-top: 0.9rem;
+  padding-bottom: 0;
+  border-top: 2px dashed rgba(43, 36, 32, 0.35);
+  border-bottom: 0;
+}
+
+.facts--row > .facts-wide {
+  grid-column: 1 / -1;
+}
+
+.fact-people--cols {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem 2rem;
+  align-items: start;
+}
+
 .fact-people {
   display: grid;
   gap: 0.9rem;
@@ -971,6 +998,7 @@ a:hover {
 
 .fact-people li {
   display: grid;
+  align-content: start;
   gap: 0.1rem;
 }
 
@@ -979,6 +1007,34 @@ a:hover {
   color: var(--tinta-suave);
   font-size: 1rem;
   line-height: 1.4;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 56rem) {
+  .about-grid {
+    grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+    gap: 4rem;
+  }
+}
+
+.about-grid .book-cover {
+  margin-inline: 0;
+}
+
+.about-hook {
+  font-family: var(--fonte-pincel);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.section--flush {
+  padding-top: 0;
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
 }
 
 .portrait {

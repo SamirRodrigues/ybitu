@@ -113,6 +113,7 @@ const pt = {
     description:
       'Sobre Ybitu e o poder de acordar memórias adormecidas, a autora Jucinara de Melo Silva e o ilustrador Pingo.',
     aboutTitle: 'Sobre a obra',
+    hook: 'Você já sentiu o vento soprando histórias no seu ouvido?',
     about: [
       'Ybitu e o poder de acordar memórias adormecidas é o primeiro livro infantil de Jucinara de Melo Silva, escrito em conjunto com os professores potiguaras da comunidade Catu/RN. Ele transforma narrativas orais e memórias compartilhadas por esses docentes em uma história sensível para crianças.',
       'Pela imaginação, pela oralidade e pelo afeto, o livro convida as crianças a descobrir que a língua, a memória e a identidade são heranças vivas: passam de geração em geração e fortalecem o sentimento de pertencimento.',
@@ -338,6 +339,7 @@ const es: Copy = {
     description:
       'Sobre Ybitu y el poder de despertar recuerdos dormidos, la autora Jucinara de Melo Silva y el ilustrador Pingo.',
     aboutTitle: 'Sobre la obra',
+    hook: '¿Alguna vez sentiste el viento soplando historias en tu oído?',
     about: [
       'Ybitu y el poder de despertar recuerdos dormidos es el primer libro infantil de Jucinara de Melo Silva, escrito en conjunto con los profesores potiguaras de la comunidad Catu (Río Grande del Norte). Transforma narraciones orales y memorias compartidas por esos docentes en una historia sensible para niñas y niños.',
       'Por medio de la imaginación, la oralidad y el afecto, el libro invita a descubrir que la lengua, la memoria y la identidad son herencias vivas: pasan de generación en generación y fortalecen el sentimiento de pertenencia.',
