@@ -14,9 +14,12 @@ export const site = {
    */
   contactEmail: '',
 
-  /** Quando o livro estiver à venda: troque `status` para 'available' e preencha `buyUrl`. */
+  /**
+   * Situação da venda. Hoje: pré-venda, só pelo formulário do site.
+   * Quando houver compra online: troque `status` para 'available' e preencha `buyUrl`.
+   */
   book: {
-    status: 'soon' as 'soon' | 'available',
+    status: 'presale' as 'presale' | 'available',
     buyUrl: '',
   },
 

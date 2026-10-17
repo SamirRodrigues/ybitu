@@ -517,6 +517,14 @@ a:hover {
   font-weight: 600;
 }
 
+.presale-note {
+  margin-top: 1rem;
+  max-width: 33rem;
+  padding-left: 1rem;
+  border-left: 6px solid var(--tijolo);
+  font-weight: 800;
+}
+
 .credits {
   margin-top: 1.25rem;
   display: grid;

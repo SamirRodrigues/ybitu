@@ -24,10 +24,10 @@ const pt = {
     research: 'Pesquisa',
     interviews: 'Entrevistas',
     community: 'Comunidade',
-    cta: 'Avise-me',
+    cta: 'Reservar',
   },
   langName: { pt: 'Português', es: 'Español' },
-  status: { soon: 'Em breve', editing: 'Em edição', soonLaunch: 'Lançamento em breve' },
+  status: { soon: 'Em breve', editing: 'Em edição', presale: 'Pré-venda aberta' },
   cover: {
     alt: 'Capa do livro Ybitu e o poder de acordar memórias adormecidas',
     provisionalTitle: 'Ybitu',
@@ -36,14 +36,16 @@ const pt = {
   home: {
     title: 'Ybitu e o poder de acordar memórias adormecidas',
     description:
-      'Livro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nascido das histórias de professores potiguaras da comunidade Catu (RN). Cadastre-se para saber do lançamento.',
+      'Livro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nascido das histórias de professores potiguaras da comunidade Catu (RN). Em pré-venda, com poucas unidades, disponível pelo formulário deste site.',
     heroTitleLead: 'Ybitu',
     heroTitleRest: 'e o poder de acordar memórias adormecidas',
     heroIntro:
       'Um livro infantil que nasceu das histórias contadas por professores potiguaras da comunidade Catu, no Rio Grande do Norte, sobre a sua língua, a sua escola e o seu povo.',
     by: 'Texto de Jucinara de Melo Silva',
     illustratedBy: 'Ilustrações de Pingo',
-    ctaPrimary: 'Avise-me do lançamento',
+    presaleNote:
+      'O livro está em pré-venda e, por enquanto, só está disponível pelo formulário deste site. Temos poucas unidades.',
+    ctaPrimary: 'Quero meu exemplar',
     ctaSecondary: 'Conhecer o livro',
     ideasTitle: 'Uma história para crianças, feita com quem vive essa história',
     ideas: [
@@ -67,7 +69,7 @@ const pt = {
     },
     schools: {
       title: 'Escolas e instituições',
-      text: 'Para bibliotecas, salas de aula e projetos que querem aproximar das crianças as vozes indígenas do Nordeste. Cadastre-se como escola ou instituição para saber das formas de compra.',
+      text: 'Para bibliotecas, salas de aula e projetos que querem aproximar das crianças as vozes indígenas do Nordeste. Preencha o formulário como escola ou instituição para saber das formas de compra.',
     },
     projectTitle: 'Conheça o projeto por trás do livro',
     tiles: {
@@ -77,9 +79,9 @@ const pt = {
     },
   },
   lead: {
-    title: 'Avise-me quando o livro chegar',
+    title: 'Reserve seu exemplar na pré-venda',
     intro:
-      'Deixe seu contato para saber a data de lançamento e onde comprar. Usamos seus dados só para falar do livro e do projeto.',
+      'O livro está em pré-venda e, por enquanto, só está disponível pelo formulário abaixo. Temos poucas unidades. Deixe seu contato e retornaremos com as informações para garantir o seu. Usamos seus dados só para falar do livro e do projeto.',
     name: 'Nome',
     email: 'E-mail',
     role: 'Você é',
@@ -92,13 +94,13 @@ const pt = {
       other: 'Outro',
     },
     city: 'Cidade e estado (opcional)',
-    consentBefore: 'Concordo em receber avisos sobre o livro e o projeto. Li a',
+    consentBefore: 'Concordo em ser contatado(a) sobre a pré-venda, o livro e o projeto. Li a',
     consentLink: 'Política de Privacidade',
     consentAfter: '.',
-    submit: 'Avise-me',
+    submit: 'Quero meu exemplar',
     sending: 'Enviando…',
-    successTitle: 'Pronto, você está na lista.',
-    successText: 'Vamos avisar por e-mail quando o livro for lançado.',
+    successTitle: 'Recebemos o seu cadastro.',
+    successText: 'Entraremos em contato por e-mail com as informações da pré-venda. As unidades são limitadas.',
     errors: {
       required: 'Preencha este campo.',
       email: 'Digite um e-mail válido, como nome@exemplo.com.',
@@ -125,7 +127,7 @@ const pt = {
       { label: 'Ilustrações', value: 'Pingo' },
       { label: 'Gênero', value: 'Livro infantil' },
       { label: 'Origem', value: 'Pesquisa de Mestrado em Educação, PPGED/UFRN' },
-      { label: 'Lançamento', value: 'Em breve' },
+      { label: 'Disponibilidade', value: 'Em pré-venda, poucas unidades' },
     ],
     authorTitle: 'A autora',
     authorBio:
@@ -138,7 +140,8 @@ const pt = {
       'Clayton Pereira, conhecido artisticamente como Pingo, é ilustrador infantil e apaixonado pelo poder das histórias. Encontra na ilustração uma forma de dar vida a mundos mágicos, despertar a imaginação e transmitir valores e reflexões às crianças. Participar da obra Ybitu e o poder de acordar memórias adormecidas foi uma experiência marcante, que reforçou sua admiração pela riqueza da cultura dos povos originários e pela importância de preservar a língua tupi como parte da memória e da identidade brasileira.',
     illustratorPhotoAlt: 'Retrato de Clayton Pereira, o Pingo',
     buyTitle: 'Onde comprar',
-    buySoon: 'O livro ainda não está à venda. Deixe seu contato e avisamos assim que as vendas abrirem.',
+    buySoon:
+      'O livro está em pré-venda e, por enquanto, só está disponível pelo formulário abaixo. Temos poucas unidades. Deixe seu contato e retornaremos com as informações para garantir o seu.',
     buyNow: 'Comprar o livro',
   },
   research: {
@@ -182,20 +185,20 @@ const pt = {
   },
   privacy: {
     title: 'Política de Privacidade',
-    description: 'Como o site Ybitu coleta, usa e protege os dados de quem se cadastra para saber do lançamento.',
+    description: 'Como o site Ybitu coleta, usa e protege os dados de quem preenche o formulário da pré-venda.',
     updated: 'Atualizada em outubro de 2026',
     sections: [
       {
         title: 'Quais dados coletamos',
         body: [
-          'Quando você se cadastra para saber do lançamento, pedimos nome, e-mail e o seu perfil (por exemplo, família, professor(a) ou escola). A cidade e o estado são opcionais.',
+          'Quando você preenche o formulário da pré-venda, pedimos nome, e-mail e o seu perfil (por exemplo, família, professor(a) ou escola). A cidade e o estado são opcionais.',
           'Também guardamos a data e a hora do cadastro e o idioma da página em que ele foi feito.',
         ],
       },
       {
         title: 'Para que usamos',
         body: [
-          'Usamos esses dados apenas para avisar sobre o lançamento do livro, as formas de compra e as novidades do projeto. Não vendemos nem compartilhamos sua lista de contatos.',
+          'Usamos esses dados apenas para entrar em contato sobre a pré-venda do livro, as formas de compra e as novidades do projeto. Não vendemos nem compartilhamos sua lista de contatos.',
         ],
       },
       {
@@ -256,10 +259,10 @@ const es: Copy = {
     research: 'Investigación',
     interviews: 'Entrevistas',
     community: 'Comunidad',
-    cta: 'Avísame',
+    cta: 'Reservar',
   },
   langName: { pt: 'Português', es: 'Español' },
-  status: { soon: 'Próximamente', editing: 'En edición', soonLaunch: 'Lanzamiento próximo' },
+  status: { soon: 'Próximamente', editing: 'En edición', presale: 'Preventa abierta' },
   cover: {
     alt: 'Portada del libro Ybitu y el poder de despertar recuerdos dormidos',
     provisionalTitle: 'Ybitu',
@@ -268,14 +271,16 @@ const es: Copy = {
   home: {
     title: 'Ybitu y el poder de despertar recuerdos dormidos',
     description:
-      'Libro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nacido de las historias de profesores potiguaras de la comunidad Catu (RN, Brasil). Regístrate para saber del lanzamiento.',
+      'Libro infantil de Jucinara de Melo Silva, ilustrado por Pingo, nacido de las historias de profesores potiguaras de la comunidad Catu (RN, Brasil). En preventa, con pocas unidades, disponible mediante el formulario de este sitio.',
     heroTitleLead: 'Ybitu',
     heroTitleRest: 'y el poder de despertar recuerdos dormidos',
     heroIntro:
       'Un libro infantil que nació de las historias contadas por profesores potiguaras de la comunidad Catu, en Río Grande del Norte (Brasil), sobre su lengua, su escuela y su pueblo.',
     by: 'Texto de Jucinara de Melo Silva',
     illustratedBy: 'Ilustraciones de Pingo',
-    ctaPrimary: 'Avísame del lanzamiento',
+    presaleNote:
+      'El libro está en preventa y, por ahora, solo está disponible mediante el formulario de este sitio. Tenemos pocas unidades.',
+    ctaPrimary: 'Quiero mi ejemplar',
     ctaSecondary: 'Conocer el libro',
     ideasTitle: 'Una historia para niñas y niños, hecha con quienes viven esa historia',
     ideas: [
@@ -299,7 +304,7 @@ const es: Copy = {
     },
     schools: {
       title: 'Escuelas e instituciones',
-      text: 'Para bibliotecas, aulas y proyectos que quieren acercar a los niños las voces indígenas del Nordeste de Brasil. Regístrate como escuela o institución para conocer las formas de compra.',
+      text: 'Para bibliotecas, aulas y proyectos que quieren acercar a los niños las voces indígenas del Nordeste de Brasil. Completa el formulario como escuela o institución para conocer las formas de compra.',
     },
     projectTitle: 'Conoce el proyecto detrás del libro',
     tiles: {
@@ -309,9 +314,9 @@ const es: Copy = {
     },
   },
   lead: {
-    title: 'Avísame cuando llegue el libro',
+    title: 'Reserva tu ejemplar en la preventa',
     intro:
-      'Deja tu contacto para saber la fecha de lanzamiento y dónde comprar. Usamos tus datos solo para hablarte del libro y del proyecto.',
+      'El libro está en preventa y, por ahora, solo está disponible mediante el formulario de abajo. Tenemos pocas unidades. Deja tu contacto y te responderemos con la información para asegurar el tuyo. Usamos tus datos solo para hablarte del libro y del proyecto.',
     name: 'Nombre',
     email: 'Correo electrónico',
     role: 'Eres',
@@ -324,13 +329,13 @@ const es: Copy = {
       other: 'Otro',
     },
     city: 'Ciudad y país (opcional)',
-    consentBefore: 'Acepto recibir avisos sobre el libro y el proyecto. Leí la',
+    consentBefore: 'Acepto que me contacten sobre la preventa, el libro y el proyecto. Leí la',
     consentLink: 'Política de Privacidad',
     consentAfter: '.',
-    submit: 'Avísame',
+    submit: 'Quiero mi ejemplar',
     sending: 'Enviando…',
-    successTitle: 'Listo, ya estás en la lista.',
-    successText: 'Te avisaremos por correo cuando se lance el libro.',
+    successTitle: 'Recibimos tu registro.',
+    successText: 'Te contactaremos por correo con la información de la preventa. Las unidades son limitadas.',
     errors: {
       required: 'Completa este campo.',
       email: 'Escribe un correo válido, como nombre@ejemplo.com.',
@@ -357,7 +362,7 @@ const es: Copy = {
       { label: 'Ilustraciones', value: 'Pingo' },
       { label: 'Género', value: 'Libro infantil' },
       { label: 'Origen', value: 'Investigación de Maestría en Educación, PPGED/UFRN' },
-      { label: 'Lanzamiento', value: 'Próximamente' },
+      { label: 'Disponibilidad', value: 'En preventa, pocas unidades' },
     ],
     authorTitle: 'La autora',
     authorBio:
@@ -370,7 +375,8 @@ const es: Copy = {
       'Clayton Pereira, conocido artísticamente como Pingo, es ilustrador infantil y apasionado por el poder de las historias. Encuentra en la ilustración una forma de dar vida a mundos mágicos, despertar la imaginación y transmitir valores y reflexiones a las niñas y los niños. Participar en la obra Ybitu y el poder de despertar recuerdos dormidos fue una experiencia inolvidable, que reforzó su admiración por la riqueza de la cultura de los pueblos originarios y por la importancia de preservar la lengua tupí como parte de la memoria y de la identidad brasileña.',
     illustratorPhotoAlt: 'Retrato de Clayton Pereira, Pingo',
     buyTitle: 'Dónde comprar',
-    buySoon: 'El libro todavía no está a la venta. Deja tu contacto y te avisamos apenas se abran las ventas.',
+    buySoon:
+      'El libro está en preventa y, por ahora, solo está disponible mediante el formulario de abajo. Tenemos pocas unidades. Deja tu contacto y te responderemos con la información para asegurar el tuyo.',
     buyNow: 'Comprar el libro',
   },
   research: {
@@ -414,20 +420,20 @@ const es: Copy = {
   },
   privacy: {
     title: 'Política de Privacidad',
-    description: 'Cómo el sitio Ybitu recoge, usa y protege los datos de quienes se registran para saber del lanzamiento.',
+    description: 'Cómo el sitio Ybitu recoge, usa y protege los datos de quienes completan el formulario de la preventa.',
     updated: 'Actualizada en octubre de 2026',
     sections: [
       {
         title: 'Qué datos recogemos',
         body: [
-          'Cuando te registras para saber del lanzamiento, pedimos nombre, correo electrónico y tu perfil (por ejemplo, familia, profesor(a) o escuela). La ciudad y el país son opcionales.',
+          'Cuando completas el formulario de la preventa, pedimos nombre, correo electrónico y tu perfil (por ejemplo, familia, profesor(a) o escuela). La ciudad y el país son opcionales.',
           'También guardamos la fecha y la hora del registro y el idioma de la página en la que se hizo.',
         ],
       },
       {
         title: 'Para qué los usamos',
         body: [
-          'Usamos estos datos solo para avisarte del lanzamiento del libro, las formas de compra y las novedades del proyecto. No vendemos ni compartimos tu lista de contactos.',
+          'Usamos estos datos solo para contactarte sobre la preventa del libro, las formas de compra y las novedades del proyecto. No vendemos ni compartimos tu lista de contactos.',
         ],
       },
       {
