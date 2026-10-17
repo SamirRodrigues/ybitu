@@ -64,15 +64,8 @@ const initials = (name: string) =>
     <div class="wrap stack">
       <h2 id="equipe-titulo">{c.teamTitle}</h2>
       <ul class="team">
-        {team.map((person) => <li><strong>{person.name}</strong><span class="role">{pick(person.role, lang)}</span></li>)}
+        {[...team, ...narrators].map((person) => <li><strong>{person.name}</strong><span class="role">{pick(person.role, lang)}</span></li>)}
       </ul>
-      <div class="team-group">
-        <h3>{c.teamNarratorsTitle}</h3>
-        <p>{c.teamNarratorsText}</p>
-        <ul class="team">
-          {narrators.map((person) => <li><strong>{person.name}</strong><span class="role">{pick(person.role, lang)}</span></li>)}
-        </ul>
-      </div>
     </div>
   </section>
 

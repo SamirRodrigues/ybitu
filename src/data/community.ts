@@ -11,7 +11,7 @@ export interface Person {
 export const narrators: Person[] = [
   {
     name: 'Claudiane Soares',
-    role: { pt: 'Professora', es: 'Profesora' },
+    role: { pt: 'Professora de tupi', es: 'Profesora de tupí' },
   },
   {
     name: 'Valda Maria Arcanjo da Silva',
