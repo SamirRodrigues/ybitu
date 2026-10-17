@@ -17,7 +17,18 @@ pessoa em uma planilha. A planilha é o "banco de dados": você abre, filtra e b
    - na hospedagem (Vercel, Netlify, Cloudflare Pages…): cadastre a mesma variável nas configurações e publique de novo.
 7. Teste: abra o site, preencha o formulário e confira se apareceu uma linha na aba `Interessados`.
 
-Teste pelo terminal, sem abrir o site:
+Teste pelo terminal, sem abrir o site. O teste grava uma linha de verdade na planilha ("Teste"); apague-a depois.
+
+**Windows (PowerShell).** No PowerShell, `curl` é um apelido de outro comando e não aceita as opções abaixo; use este:
+
+```powershell
+$url  = "COLE_A_URL_AQUI"
+$body = '{"name":"Teste","email":"teste@exemplo.com","role":"reader","city":"","consent":true,"lang":"pt","page":"/"}'
+Invoke-RestMethod -Method Post -Uri $url -ContentType "text/plain;charset=utf-8" -Body $body
+# resposta esperada: ok : True
+```
+
+**Mac e Linux:**
 
 ```bash
 curl -L -X POST "COLE_A_URL_AQUI" \
@@ -25,6 +36,8 @@ curl -L -X POST "COLE_A_URL_AQUI" \
   -d '{"name":"Teste","email":"teste@exemplo.com","role":"reader","city":"","consent":true,"lang":"pt","page":"/"}'
 # resposta esperada: {"ok":true}
 ```
+
+Troque `COLE_A_URL_AQUI` pela URL do app da Web (a que termina em `/exec`), mantendo as aspas.
 
 ## Usar a lista
 
