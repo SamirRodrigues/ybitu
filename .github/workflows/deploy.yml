@@ -7,7 +7,8 @@
 # O endereço do site pode ser trocado por "Variables" do repositório (Settings → Secrets and variables → Actions → Variables):
 #   SITE_URL              padrão: https://ybituolivro.com.br
 #   BASE_PATH             padrão: /   (use /ybitu e https://samirrodrigues.github.io para publicar sem o domínio próprio)
-#   PUBLIC_LEADS_ENDPOINT URL do Google Apps Script da lista de interessados (opcional até a planilha existir)
+#   PUBLIC_LEADS_ENDPOINT URL do Google Apps Script da lista de interessados (já tem um padrão: a planilha do projeto;
+#                         cadastre a variável só para trocar de planilha)
 name: Publicar no GitHub Pages
 
 on:
@@ -45,7 +46,7 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL || 'https://ybituolivro.com.br' }}
           BASE_PATH: ${{ vars.BASE_PATH || '/' }}
-          PUBLIC_LEADS_ENDPOINT: ${{ vars.PUBLIC_LEADS_ENDPOINT }}
+          PUBLIC_LEADS_ENDPOINT: ${{ vars.PUBLIC_LEADS_ENDPOINT || 'https://script.google.com/macros/s/AKfycbwzSnqGEjzZw0rSKYhiU1JenQfVbOCdONSOLYbJ4Z22yYFYPLkssCxCBduKZEDIc1U2/exec' }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

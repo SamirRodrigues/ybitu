@@ -81,8 +81,9 @@ O site é estático e é publicado pelo workflow `.github/workflows/deploy.yml` 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. **Settings → Pages → Custom domain:** `ybituolivro.com.br`. Quando o GitHub liberar, marque **Enforce HTTPS**.
 3. Coloque o código na `main` (merge do branch de trabalho). O primeiro deploy sai sozinho.
-4. Em **Settings → Secrets and variables → Actions → Variables**, cadastre `PUBLIC_LEADS_ENDPOINT` com a URL do
-   Google Apps Script (veja `docs/google-sheets/README.md`) e rode o workflow de novo. Sem ela o formulário não grava.
+4. A lista de interessados já aponta para o Google Apps Script do projeto (padrão no workflow). Para trocar de planilha,
+   crie um novo script (`docs/google-sheets/README.md`) e cadastre a URL em **Settings → Secrets and variables → Actions →
+   Variables** como `PUBLIC_LEADS_ENDPOINT`.
 
 **DNS do domínio (no painel onde ele foi registrado, por exemplo Registro.br):**
 
@@ -102,7 +103,7 @@ Qualquer hospedagem estática também serve (Cloudflare Pages, Netlify, Vercel):
 
 ## Antes de publicar
 
-- [ ] Criar a planilha e o script, e definir `PUBLIC_LEADS_ENDPOINT` (variável do repositório; sem isso nenhum cadastro é gravado).
+- [ ] Testar o formulário no site publicado e conferir se a linha aparece na planilha.
 - [ ] Preencher `contactEmail` em `src/config.ts`. A Política de Privacidade precisa de um canal para pedidos de exclusão.
 - [ ] Revisar a Política de Privacidade com quem cuida da parte jurídica (texto-base, não é parecer).
 - [ ] Mostrar os textos da página Comunidade aos narradores e à escola antes de publicar.
