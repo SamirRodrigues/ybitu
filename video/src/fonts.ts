@@ -26,7 +26,7 @@ export const loadFonts = () => {
         weight: f.weight,
         ...(f.unicodeRange ? { unicodeRange: f.unicodeRange } : {}),
       });
-      document.fonts.add(await face.load());
+      (document.fonts as unknown as { add: (f: FontFace) => void }).add(await face.load());
     }),
   )
     .then(() => continueRender(handle))
