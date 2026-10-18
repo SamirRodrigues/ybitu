@@ -64,6 +64,21 @@ link da planilha. Ao clicar em "Responder" no e-mail, a resposta já vai para a 
 Se o limite estourar, o cadastro continua sendo gravado, só o e-mail deixa de ser enviado. Se a mesma pessoa preencher
 o formulário de novo com o mesmo e-mail, a linha é atualizada e o alerta diz "Reserva atualizada".
 
+## Se o alerta não chegar
+
+Abra **Execuções** (ícone de relógio) no Apps Script e veja se o `doPost` mais recente mostra um número de versão novo
+(depois de cada edição do código é preciso **Implantar → Gerenciar implantações → lápis → Nova versão → Implantar**).
+Rode `testarAlerta` com o botão **Executar** (não com Depuração, que pausa antes de enviar) e leia o **Registro de execução**:
+
+- **"Você não tem permissão para chamar MailApp.sendEmail"**: a permissão de e-mail não foi concedida. Em *Configurações
+  do projeto*, marque "Mostrar arquivo de manifesto" e, no `appsscript.json`, inclua
+  `"oauthScopes": ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/script.send_mail"]`.
+  Se a janela de autorização não abrir, remova o app "Interessados" em
+  [myaccount.google.com/permissions](https://myaccount.google.com/permissions) e execute de novo.
+- **"…Session.getEffectiveUser"**: deixe `NOTIFY_EMAILS` preenchido com o seu e-mail, em vez de vazio.
+- **Limite excedido**: a conta passou da cota diária de e-mails (cerca de 100 no Gmail).
+- No Outlook e no Gmail, confira também o spam e as abas "Outros"/"Promoções".
+
 ## Usar a lista
 
 - Cada pessoa vira uma linha. Se a mesma pessoa se cadastrar de novo com o mesmo e-mail, a linha é atualizada.
