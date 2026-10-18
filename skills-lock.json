@@ -13,6 +13,12 @@
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576"
     },
+    "tts": {
+      "source": "noizai/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tts/SKILL.md",
+      "computedHash": "ccfb890d9f797a1316ca9d6528f9c240bc0a287a2c0cb09758b41d8a8a0e18df"
+    },
     "web-design-guidelines": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",

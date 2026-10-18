@@ -7,6 +7,9 @@ Motores:
   espeak  (padrão) espeak-ng + MBROLA. Grátis e offline, mas ROBÓTICO: só serve de guia.
   piper   Piper TTS (pip install piper-tts), modelos pt_BR-faber-medium / es_MX-claude-high.
           Passe o caminho dos .onnx com --piper-model-pt / --piper-model-es.
+  kokoro  Kokoro (pip install kokoro-onnx soundfile). Neural, grátis e offline. Baixe de
+          github.com/thewh1teagle/kokoro-onnx/releases (model-files-v1.0) kokoro-v1.0.int8.onnx e
+          voices-v1.0.bin para ~/.cache/ybitu-tts/. Vozes: pf_dora (pt-BR) e ef_dora (es).
   edge    edge-tts (pip install edge-tts), vozes pt-BR-FranciscaNeural / es-MX-DaliaNeural.
           Precisa de internet. Converte para WAV com ffmpeg.
 
@@ -49,6 +52,7 @@ ROTEIRO = [5, 9, 12, 7, 6]
 # mb-es3 exige o pacote mbrola-es3; se não estiver instalado, cai para a voz nativa es-419.
 ESPEAK_VOICE = {"pt": "mb-br2", "es": "mb-es3"}
 ESPEAK_FALLBACK = {"pt": "pt-br", "es": "es-419"}
+KOKORO_VOICE = {"pt": ("pf_dora", "pt-br"), "es": ("ef_dora", "es")}
 EDGE_VOICE = {"pt": "pt-BR-FranciscaNeural", "es": "es-MX-DaliaNeural"}
 
 
@@ -75,6 +79,17 @@ def synth(engine: str, lang: str, text: str, dst: Path, args):
         if not model:
             sys.exit(f"Informe --piper-model-{lang}")
         run(["piper", "--model", model, "--output_file", str(tmp)], input=text.encode())
+    elif engine == "kokoro":
+        import os
+        import soundfile as sf
+        from kokoro_onnx import Kokoro
+        cache = Path(os.path.expanduser("~/.cache/ybitu-tts"))
+        global _KOKORO
+        if "_KOKORO" not in globals() or _KOKORO is None:
+            _KOKORO = Kokoro(str(cache / "kokoro.int8.onnx"), str(cache / "voices-v1.0.bin"))
+        voice, code = KOKORO_VOICE[lang]
+        samples, sr = _KOKORO.create(text, voice=voice, speed=args.speed, lang=code)
+        sf.write(str(tmp), samples, sr)
     elif engine == "edge":
         mp3 = dst.with_suffix(".tmp.mp3")
         run(["edge-tts", "--voice", EDGE_VOICE[lang], "--text", text, "--write-media", str(mp3)])
@@ -91,10 +106,11 @@ def duration(path: Path) -> float:
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--engine", choices=["espeak", "piper", "edge"], default="espeak")
+    p.add_argument("--engine", choices=["espeak", "piper", "kokoro", "edge"], default="espeak")
     p.add_argument("--langs", default="pt,es")
     p.add_argument("--rate", type=int, default=150, help="palavras/min do pt (só espeak)")
     p.add_argument("--rate-es", type=int, default=175, help="palavras/min do es (só espeak; a voz es-419 é lenta)")
+    p.add_argument("--speed", type=float, default=0.95, help="velocidade (só kokoro)")
     p.add_argument("--piper-model-pt")
     p.add_argument("--piper-model-es")
     args = p.parse_args()
