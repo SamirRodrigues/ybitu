@@ -55,7 +55,9 @@ link da planilha. Ao clicar em "Responder" no e-mail, a resposta já vai para a 
 
 **Opções no topo do `Code.gs`:**
 
-- `NOTIFY_EMAILS`: vazio avisa a conta dona do script. Para avisar outras pessoas: `'a@exemplo.com, b@exemplo.com'`.
+- `NOTIFY_EMAILS`: **preencha com o seu e-mail**, por exemplo `'a@exemplo.com'`, ou vários separados por vírgula:
+  `'a@exemplo.com, b@exemplo.com'`. Se ficar vazio, o script tenta descobrir o e-mail da conta dona, o que exige uma
+  permissão extra do Google e pode falhar com "Você não tem permissão para chamar Session.getEffectiveUser".
 - `NOTIFY = false` desliga os alertas.
 
 **Limites:** contas Gmail comuns enviam até cerca de 100 e-mails por dia pelo Apps Script; contas Google Workspace, mais.

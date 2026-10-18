@@ -17,8 +17,10 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PHONE_CHARS = /^[+()\d\s.-]+$/;
 
 /**
- * Alerta por e-mail a cada cadastro. Deixe vazio para avisar o dono deste script (a conta que o implantou),
- * ou liste um ou mais e-mails separados por vírgula: 'a@exemplo.com, b@exemplo.com'.
+ * Alerta por e-mail a cada cadastro. PREENCHA com o seu e-mail (ou vários, separados por vírgula):
+ *   const NOTIFY_EMAILS = 'a@exemplo.com, b@exemplo.com';
+ * Deixar vazio tenta avisar a conta dona do script, mas isso exige uma permissão extra do Google
+ * (ler o e-mail da conta) que muitas vezes não é concedida; por isso preencher é o jeito mais seguro.
  * Para desligar os alertas, use NOTIFY = false.
  */
 const NOTIFY = true;
@@ -102,7 +104,10 @@ function notify_(entry, isNew) {
   if (!NOTIFY) return;
   try {
     const to = recipients_();
-    if (!to) return;
+    if (!to) {
+      console.error('Alerta não enviado: preencha NOTIFY_EMAILS no topo do código com o seu e-mail.');
+      return;
+    }
     const book = SpreadsheetApp.getActiveSpreadsheet();
     const lines = [
       isNew ? 'Novo cadastro na pré-venda do livro Ybitu.' : 'Cadastro atualizado (o mesmo e-mail preencheu o formulário de novo).',
@@ -132,7 +137,11 @@ function notify_(entry, isNew) {
 function recipients_() {
   const list = NOTIFY_EMAILS.split(',').map(function (item) { return item.trim(); }).filter(function (item) { return EMAIL.test(item); });
   if (list.length) return list.join(',');
-  return Session.getEffectiveUser().getEmail();
+  try {
+    return Session.getEffectiveUser().getEmail();
+  } catch (err) {
+    return ''; // sem permissão para ler o e-mail da conta: notify_ registra o aviso acima
+  }
 }
 
 /**
