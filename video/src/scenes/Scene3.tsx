@@ -1,18 +1,22 @@
 import React from 'react';
-import { AbsoluteFill } from 'remotion';
-import { Credits, PaperBackground, TriangleStrip, useLayout } from '../components/common';
+import { AbsoluteFill, interpolate } from 'remotion';
+import { PaperBackground, TriangleStrip, useEnter, useLayout } from '../components/common';
 import { strings } from '../i18n';
+import { color, font } from '../theme';
 import type { SceneProps } from './types';
 
 /**
- * Cena 3: créditos em sequência, cada um com triângulo marcador, todos com o mesmo peso.
- * Os narradores são as pessoas cujas histórias inspiraram o livro (a voz deles não é usada).
+ * Cena 3: a história. "Inédito" e a frase potiguar entram em sequência com a fala.
+ * Os créditos não ficam aqui: aparecem pequenos na cena final.
  */
-export const Scene3: React.FC<SceneProps> = ({ lang, duration }) => {
+export const Scene3: React.FC<SceneProps> = ({ lang }) => {
   const { vertical, content } = useLayout();
-  const t = strings[lang];
-  // Entradas acompanham a fala: texto, ilustrações, narradores.
-  const starts = [4, Math.round(duration * 0.22), Math.round(duration * 0.36)];
+  const t = strings[lang].story;
+  const pill = useEnter(6, 13);
+  const l1 = useEnter(30, 15);
+  const l2 = useEnter(58, 15);
+  const fade = (e: number) => interpolate(e, [0, 0.4], [0, 1], { extrapolateRight: 'clamp' });
+  const rise = (e: number) => `translateY(${interpolate(e, [0, 1], [46, 0])}px)`;
   return (
     <AbsoluteFill>
       <PaperBackground />
@@ -24,16 +28,55 @@ export const Scene3: React.FC<SceneProps> = ({ lang, duration }) => {
           bottom: content.bottom,
           height: 'auto',
           justifyContent: 'center',
-          padding: vertical ? '0 70px' : '40px 90px 0',
+          alignItems: 'center',
+          gap: vertical ? 56 : 30,
+          padding: vertical ? '0 80px' : '40px 90px 0',
+          textAlign: 'center',
         }}
       >
-        <Credits
-          items={t.credits}
-          starts={starts}
-          labelSize={vertical ? 40 : 30}
-          nameSize={vertical ? 78 : 64}
-          gap={vertical ? 64 : 34}
-        />
+        <div
+          style={{
+            fontFamily: font.texto,
+            fontWeight: 800,
+            fontSize: vertical ? 54 : 40,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            background: color.amarelo,
+            color: color.tinta,
+            padding: vertical ? '14px 44px' : '10px 34px',
+            borderRadius: 999,
+            opacity: fade(pill),
+            transform: `scale(${interpolate(pill, [0, 1], [0.7, 1])}) rotate(-3deg)`,
+          }}
+        >
+          {t.pill}
+        </div>
+        <div
+          style={{
+            fontFamily: font.pincel,
+            fontSize: vertical ? 150 : 100,
+            lineHeight: 1,
+            color: color.azul,
+            opacity: fade(l1),
+            transform: rise(l1),
+            textWrap: 'balance',
+          }}
+        >
+          {t.line1}
+        </div>
+        <div
+          style={{
+            fontFamily: font.pincel,
+            fontSize: vertical ? 96 : 66,
+            lineHeight: 1.05,
+            color: color.tinta,
+            opacity: fade(l2),
+            transform: rise(l2),
+            textWrap: 'balance',
+          }}
+        >
+          {t.line2}
+        </div>
       </AbsoluteFill>
     </AbsoluteFill>
   );

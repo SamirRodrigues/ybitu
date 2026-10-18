@@ -28,23 +28,23 @@ AUDIO = ROOT / "public" / "audio"
 # Texto EXATO de docs/video/roteiro.md (sem as aspas).
 NARRACAO = {
     "pt": [
-        "Algumas histórias dormem. E esperam alguém para acordá-las.",
-        "Ybitu é um livro infantil que nasceu das histórias de professores potiguaras da comunidade Catu, no Rio Grande do Norte.",
-        "Texto de Jucinara de Melo Silva. Ilustrações de Pingo. Com as histórias dos narradores Claudiane Soares, Valda Maria Arcanjo da Silva e Luiz Katu.",
-        "A pré-venda está aberta. O livro custa cinquenta e cinco reais e, por enquanto, só está disponível pelo nosso site. Temos poucas unidades.",
-        "Reserve o seu em ybituolivro ponto com ponto br.",
+        "Há memórias que não se apagam. Elas só adormecem, esperando alguém para acordá-las.",
+        "Nas terras do Catu, no Rio Grande do Norte, vive o povo potiguara. E ali, professores guardam e contam histórias sobre a sua língua, a sua escola e o seu povo.",
+        "Essas histórias viraram Ybitu: um livro infantil inédito, escrito no Rio Grande do Norte, sobre os indígenas potiguaras do Catu. Para que as crianças conheçam essas memórias, e nunca mais as esqueçam.",
+        "A pré-venda está aberta. São cinquenta e cinco reais, só pelo nosso site, e temos poucas unidades.",
+        "Acorde essa memória. Reserve o seu em ybituolivro ponto com ponto br.",
     ],
     "es": [
-        "Algunas historias duermen. Y esperan a alguien que las despierte.",
-        "Ybitu es un libro infantil nacido de las historias de profesores potiguaras de la comunidad Catu, en Rio Grande do Norte, Brasil.",
-        "Texto de Jucinara de Melo Silva. Ilustraciones de Pingo. Con las historias de los narradores Claudiane Soares, Valda Maria Arcanjo da Silva y Luiz Katu.",
-        "La preventa está abierta. El libro cuesta cincuenta y cinco reales brasileños y, por ahora, solo se consigue en nuestro sitio. Quedan pocas unidades.",
-        "Reserva el tuyo en ybituolivro punto com punto br.",
+        "Hay memorias que no se borran. Solo duermen, esperando a alguien que las despierte.",
+        "En las tierras de Catu, en Rio Grande do Norte, vive el pueblo potiguara. Y allí, los profesores guardan y cuentan historias sobre su lengua, su escuela y su pueblo.",
+        "Esas historias se volvieron Ybitu: un libro infantil inédito, escrito en Rio Grande do Norte, sobre los indígenas potiguaras de Catu. Para que los niños conozcan esas memorias, y nunca más las olviden.",
+        "La preventa está abierta. Son cincuenta y cinco reales brasileños, solo en nuestro sitio, y quedan pocas unidades.",
+        "Despierta esa memoria. Reserva el tuyo en ybituolivro punto com punto br.",
     ],
 }
 
 # Tempo de cada cena no roteiro (s), para avisar quando a fala passa.
-ROTEIRO = [4, 7, 9, 8, 6]
+ROTEIRO = [5, 9, 12, 7, 6]
 
 # mb-es3 exige o pacote mbrola-es3; se não estiver instalado, cai para a voz nativa es-419.
 ESPEAK_VOICE = {"pt": "mb-br2", "es": "mb-es3"}

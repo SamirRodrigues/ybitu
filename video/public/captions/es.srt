@@ -1,63 +1,77 @@
 1
-00:00:00,150 --> 00:00:01,836
-Algunas historias duermen.
+00:00:00,150 --> 00:00:02,069
+Hay memorias que no se borran.
 
 2
-00:00:01,836 --> 00:00:04,601
-Y esperan a alguien que las
-despierte.
+00:00:02,069 --> 00:00:05,694
+Solo duermen, esperando a
+alguien que las despierte.
 
 3
-00:00:05,051 --> 00:00:08,494
-Ybitu es un libro infantil
-nacido de las historias de
+00:00:06,144 --> 00:00:09,280
+En las tierras de Catu, en Rio
+Grande do Norte,
 
 4
-00:00:08,494 --> 00:00:11,288
-profesores potiguaras de la
-comunidad Catu,
+00:00:09,280 --> 00:00:10,948
+vive el pueblo potiguara.
 
 5
-00:00:11,288 --> 00:00:13,602
-en Rio Grande do Norte, Brasil.
+00:00:10,948 --> 00:00:11,415
+Y allí,
 
 6
-00:00:14,052 --> 00:00:16,193
-Texto de Jucinara de Melo Silva.
+00:00:11,415 --> 00:00:15,352
+los profesores guardan y cuentan
+historias sobre su lengua,
 
 7
-00:00:16,193 --> 00:00:17,731
-Ilustraciones de Pingo.
+00:00:15,352 --> 00:00:17,187
+su escuela y su pueblo.
 
 8
-00:00:17,731 --> 00:00:21,277
-Con las historias de los
-narradores Claudiane Soares,
+00:00:17,637 --> 00:00:21,080
+Esas historias se volvieron
+Ybitu: un libro infantil
 
 9
-00:00:21,277 --> 00:00:24,320
-Valda Maria Arcanjo da Silva y
-Luiz Katu.
+00:00:21,080 --> 00:00:23,729
+inédito, escrito en Rio Grande
+do Norte,
 
 10
-00:00:24,770 --> 00:00:26,481
-La preventa está abierta.
+00:00:23,729 --> 00:00:26,312
+sobre los indígenas potiguaras
+de Catu.
 
 11
-00:00:26,481 --> 00:00:30,176
-El libro cuesta cincuenta y
-cinco reales brasileños y,
+00:00:26,312 --> 00:00:29,093
+Para que los niños conozcan esas
+memorias,
 
 12
-00:00:30,176 --> 00:00:33,255
-por ahora, solo se consigue en
-nuestro sitio.
+00:00:29,093 --> 00:00:30,982
+y nunca más las olviden.
 
 13
-00:00:33,255 --> 00:00:35,060
-Quedan pocas unidades.
+00:00:31,432 --> 00:00:33,169
+La preventa está abierta.
 
 14
-00:00:35,510 --> 00:00:39,288
-Reserva el tuyo en ybituolivro
-punto com punto br.
+00:00:33,169 --> 00:00:35,948
+Son cincuenta y cinco reales
+brasileños,
+
+15
+00:00:35,948 --> 00:00:39,514
+solo en nuestro sitio, y quedan
+pocas unidades.
+
+16
+00:00:39,964 --> 00:00:41,515
+Despierta esa memoria.
+
+17
+00:00:41,515 --> 00:00:45,340
+Reserva el tuyo en
+ybituolivro.com.br.

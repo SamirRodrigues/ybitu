@@ -5,7 +5,7 @@ import { strings } from '../i18n';
 import { color, font, SITE } from '../theme';
 import type { SceneProps } from './types';
 
-/** Cena 5: fundo tijolo, "Reserve o seu" e o endereço, que pulsa uma vez. Entra com cortina circular. */
+/** Cena 5: fundo tijolo, convite, endereço (pulsa uma vez) e créditos pequenos, sem fala. Entra com cortina circular. */
 export const Scene5: React.FC<SceneProps> = ({ lang }) => {
   const frame = useCurrentFrame();
   const { vertical, content } = useLayout();
@@ -13,6 +13,7 @@ export const Scene5: React.FC<SceneProps> = ({ lang }) => {
   const wipe = interpolate(frame, [0, 14], [0, 150], { extrapolateRight: 'clamp' });
   const cta = useEnter(8, 14);
   const url = useEnter(18, 14);
+  const credits = useEnter(34, 16);
   // Pulso único do endereço (só interpolate sobre o frame).
   const pulse = interpolate(frame, [40, 50, 62], [1, 1.1, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const fade = (e: number) => interpolate(e, [0, 0.4], [0, 1], { extrapolateRight: 'clamp' });
@@ -61,6 +62,20 @@ export const Scene5: React.FC<SceneProps> = ({ lang }) => {
           }}
         >
           {SITE}
+        </div>
+        <div
+          style={{
+            fontFamily: font.texto,
+            fontWeight: 600,
+            fontSize: vertical ? 34 : 26,
+            lineHeight: 1.45,
+            maxWidth: vertical ? 900 : 1100,
+            opacity: fade(credits) * 0.92,
+            marginTop: vertical ? 40 : 14,
+          }}
+        >
+          <div>{t.creditsLine}</div>
+          <div>{t.narratorsLine}</div>
         </div>
       </AbsoluteFill>
     </AbsoluteFill>

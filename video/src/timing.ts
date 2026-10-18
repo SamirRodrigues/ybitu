@@ -2,8 +2,8 @@ import { staticFile } from 'remotion';
 import { FPS } from './theme';
 import type { Lang } from './i18n';
 
-/** Tempo de cada cena no roteiro (s). Total 34 s. */
-export const ROTEIRO = [4, 7, 9, 8, 6];
+/** Tempo de cada cena no roteiro (s). Total 39 s. */
+export const ROTEIRO = [5, 9, 12, 7, 6];
 /** Folga depois da fala (s). A mesma regra está em scripts/make_captions.py. */
 export const TAIL = 0.6;
 

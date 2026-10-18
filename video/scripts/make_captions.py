@@ -84,7 +84,7 @@ def main():
                 d = speak * len(p) / total
                 end = t + d if j < len(parts) - 1 else t0 + LEAD + speak + 0.3
                 cues.append({"startMs": round(t * 1000), "endMs": round(min(end, t0 + scene) * 1000),
-                             "text": "\n".join(wrap(p))})
+                             "text": "\n".join(wrap(p.replace("ybituolivro ponto com ponto br", "ybituolivro.com.br").replace("ybituolivro punto com punto br", "ybituolivro.com.br")))})
                 t += d
             t0 += scene
 

@@ -1,37 +1,41 @@
-# Vídeo de pré-venda: roteiro e narração
+# Vídeo de pré-venda: roteiro e narração (versão 2, mais emocional)
 
-Formatos: vertical 9:16 (Reels/Stories), quadrado 1:1 (feed). Duração: cerca de 34 s. Versões: português e espanhol.
-Regras: **toda vez que houver créditos, os narradores entram junto da autora e do ilustrador** (nomes como no site). Eles são os narradores das histórias que inspiraram o livro: **a voz deles não é usada no vídeo**; nada do texto do livro nem do artigo; nenhuma ilustração inteira (só capa, textura e triângulos); só dados confirmados (pré-venda, R$ 55,00, poucas unidades, só pelo site).
+Formatos: vertical 9:16 (Reels/Stories), quadrado 1:1 (feed). Duração: cerca de 40 s (pt) e 46 s (es, voz provisória). Versões: português e espanhol.
+
+Regras:
+- Nada do texto do livro nem do artigo; nenhuma ilustração inteira (só capa, textura e triângulos).
+- A história é contada pelo que já está no site: o povo potiguara do Catu (RN), os professores, a língua, a escola, as memórias. Não inventamos enredo.
+- **Créditos ficam fora da narração.** Aparecem pequenos na tela final, sempre com os narradores junto da autora e do ilustrador. Os narradores são as pessoas cujas histórias inspiraram o livro; a voz deles não é usada.
+- Só dados confirmados: pré-venda, R$ 55,00, poucas unidades, só pelo site. Nada sobre frete.
+- O livro é apresentado como **inédito**, escrito no Rio Grande do Norte sobre os indígenas potiguaras do Catu.
 
 ## Português
 
 | Cena | Tempo | Imagem e movimento | Texto na tela | Narração |
 | --- | --- | --- | --- | --- |
-| 1 | 0–4 s | Papel de aquarela. Faixa de triângulos se revela de cima para baixo. | Ybitu | "Algumas histórias dormem. E esperam alguém para acordá-las." |
-| 2 | 4–11 s | A capa entra inclinada, com leve sombra. Título em Caveat Brush. | Ybitu e o poder de acordar memórias adormecidas | "Ybitu é um livro infantil que nasceu das histórias de professores potiguaras da comunidade Catu, no Rio Grande do Norte." |
-| 3 | 11–20 s | Créditos entram em sequência, cada um com triângulo marcador, todos com o mesmo peso: texto, ilustrações e narradores (as pessoas cujas histórias inspiraram o livro). | Texto de Jucinara de Melo Silva · Ilustrações de Pingo · Narradores: Claudiane Soares, Valda Maria Arcanjo da Silva e Luiz Katu | "Texto de Jucinara de Melo Silva. Ilustrações de Pingo. Com as histórias dos narradores Claudiane Soares, Valda Maria Arcanjo da Silva e Luiz Katu." |
-| 4 | 20–28 s | Etiqueta tijolo "Pré-venda / R$ 55,00" cai sobre a capa e se ajusta. Abaixo: "Poucas unidades". | Pré-venda aberta · R$ 55,00 · Poucas unidades | "A pré-venda está aberta. O livro custa cinquenta e cinco reais e, por enquanto, só está disponível pelo nosso site. Temos poucas unidades." |
-| 5 | 28–34 s | Fundo tijolo. O endereço aparece e pulsa uma vez. | Reserve o seu · ybituolivro.com.br | "Reserve o seu em ybituolivro ponto com ponto br." |
-
-Narração corrida (cerca de 80 palavras, cerca de 32 s em ritmo calmo):
-"Algumas histórias dormem. E esperam alguém para acordá-las. Ybitu é um livro infantil que nasceu das histórias de professores potiguaras da comunidade Catu, no Rio Grande do Norte. Texto de Jucinara de Melo Silva. Ilustrações de Pingo. Com as histórias dos narradores Claudiane Soares, Valda Maria Arcanjo da Silva e Luiz Katu. A pré-venda está aberta. O livro custa cinquenta e cinco reais e, por enquanto, só está disponível pelo nosso site. Temos poucas unidades. Reserve o seu em ybituolivro ponto com ponto br."
+| 1 | 0–5 s | Papel de aquarela. Faixa de triângulos se revela. | Ybitu | "Há memórias que não se apagam. Elas só adormecem, esperando alguém para acordá-las." |
+| 2 | 5–14 s | A capa entra inclinada, com sombra. | Ybitu e o poder de acordar memórias adormecidas | "Nas terras do Catu, no Rio Grande do Norte, vive o povo potiguara. E ali, professores guardam e contam histórias sobre a sua língua, a sua escola e o seu povo." |
+| 3 | 14–26 s | Selo "Inédito", depois "Uma história potiguar" e "sobre o povo potiguara do Catu". | Inédito · Uma história potiguar · sobre o povo potiguara do Catu | "Essas histórias viraram Ybitu: um livro infantil inédito, escrito no Rio Grande do Norte, sobre os indígenas potiguaras do Catu. Para que as crianças conheçam essas memórias, e nunca mais as esqueçam." |
+| 4 | 26–33 s | Fita tijolo "Pré-venda / R$ 55,00" sobre a capa; "Poucas unidades". | Pré-venda aberta · R$ 55,00 · Poucas unidades | "A pré-venda está aberta. São cinquenta e cinco reais, só pelo nosso site, e temos poucas unidades." |
+| 5 | 33–39 s | Fundo tijolo, convite, endereço (pulsa uma vez) e créditos pequenos, sem fala. | Acorde essa memória · ybituolivro.com.br · Texto de Jucinara de Melo Silva · Ilustrações de Pingo · Narradores: Claudiane Soares, Valda Maria Arcanjo da Silva e Luiz Katu | "Acorde essa memória. Reserve o seu em ybituolivro ponto com ponto br." |
 
 ## Español
 
 | Cena | Narración |
 | --- | --- |
-| 1 | "Algunas historias duermen. Y esperan a alguien que las despierte." |
-| 2 | "Ybitu es un libro infantil nacido de las historias de profesores potiguaras de la comunidad Catu, en Rio Grande do Norte, Brasil." |
-| 3 | "Texto de Jucinara de Melo Silva. Ilustraciones de Pingo. Con las historias de los narradores Claudiane Soares, Valda Maria Arcanjo da Silva y Luiz Katu." |
-| 4 | "La preventa está abierta. El libro cuesta cincuenta y cinco reales brasileños y, por ahora, solo se consigue en nuestro sitio. Quedan pocas unidades." |
-| 5 | "Reserva el tuyo en ybituolivro punto com punto br." |
+| 1 | "Hay memorias que no se borran. Solo duermen, esperando a alguien que las despierte." |
+| 2 | "En las tierras de Catu, en Rio Grande do Norte, vive el pueblo potiguara. Y allí, los profesores guardan y cuentan historias sobre su lengua, su escuela y su pueblo." |
+| 3 | "Esas historias se volvieron Ybitu: un libro infantil inédito, escrito en Rio Grande do Norte, sobre los indígenas potiguaras de Catu. Para que los niños conozcan esas memorias, y nunca más las olviden." |
+| 4 | "La preventa está abierta. Son cincuenta y cinco reales brasileños, solo en nuestro sitio, y quedan pocas unidades." |
+| 5 | "Despierta esa memoria. Reserva el tuyo en ybituolivro punto com punto br." |
 
-Créditos na tela em espanhol: "Texto · Ilustraciones · Narradores: Claudiane Soares, Valda Maria Arcanjo da Silva y Luiz Katu".
-Texto na tela em espanhol: "Preventa abierta · R$ 55,00 · Pocas unidades", "Reserva el tuyo".
+Texto en pantalla: "Inédito · Una historia potiguar · sobre el pueblo potiguara de Catu", "Preventa abierta · R$ 55,00 · Pocas unidades", "Despierta esa memoria". Créditos finales: "Texto de Jucinara de Melo Silva · Ilustraciones de Pingo · Narradores: Claudiane Soares, Valda Maria Arcanjo da Silva y Luiz Katu".
 
 ## Pontos para confirmar antes de publicar
-- Autorização dos três narradores para o nome (e a imagem, se aparecerem) no vídeo, e conferência da grafia dos nomes com eles.
-- Autorização de Pingo e da autora para o uso da capa no vídeo (já aparece no site).
+- A autora aprova a frase "Para que as crianças conheçam essas memórias, e nunca mais as esqueçam", que expressa a intenção do livro.
+- "Inédito": confirmar que é assim que a autora quer apresentar a obra (sem "primeiro" nem "único", que não dá para comprovar).
+- Autorização dos três narradores para o nome no vídeo, e conferência da grafia.
+- Autorização de Pingo e da autora para o uso da capa (já aparece no site).
 - Música: faixa livre de direitos ou original.
-- Se a venda inclui frete: não dizer nada sobre isso na narração enquanto não houver resposta.
+- Voz: a de teste é robótica; trocar por Piper ou Edge TTS (`video/scripts/make_audio.py`) ou por gravação humana.
 - Revisão do espanhol por pessoa nativa ou fluente.
