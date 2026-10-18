@@ -21,6 +21,8 @@ export const site = {
   book: {
     status: 'presale' as 'presale' | 'available',
     buyUrl: '',
+    /** Preço em reais. Apague (ou coloque 0) para esconder o valor em todo o site. */
+    price: 55,
   },
 
   /** Aplicativo web do Google Apps Script que grava os cadastros (veja docs/google-sheets). */

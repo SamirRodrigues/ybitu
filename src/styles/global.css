@@ -1510,3 +1510,55 @@ a:hover {
     forced-color-adjust: none;
   }
 }
+
+/* Etiqueta de preço sobre a capa: papel tijolo com canto cortado em triângulo */
+.cover-wrap {
+  position: relative;
+  width: min(100%, 26rem);
+  margin-inline: auto;
+}
+
+.cover-wrap .book-cover {
+  width: 100%;
+  margin: 0;
+}
+
+.about-grid .cover-wrap {
+  margin-inline: 0;
+}
+
+.price-tag {
+  position: absolute;
+  left: -0.75rem;
+  bottom: -1.25rem;
+  display: grid;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0.6rem 1.6rem 0.7rem 1rem;
+  background: var(--tijolo);
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 0.9rem) 50%, 100% 100%, 0 100%);
+  transform: rotate(-4deg);
+  transform-origin: left bottom;
+  filter: drop-shadow(0 3px 4px rgba(74, 40, 20, 0.35));
+  line-height: 1;
+}
+
+.price-tag__label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.price-tag__value {
+  font-family: var(--fonte-pincel);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.lead-price {
+  margin: 0;
+  font-weight: 800;
+}

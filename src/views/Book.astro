@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import nodePath from 'node:path';
 import Base from '../layouts/Base.astro';
+import { formatPrice, hasPrice } from '../price';
 import BookCover from '../components/BookCover.astro';
 import LeadSection from '../components/LeadSection.astro';
 import { copy } from '../content/copy';
@@ -37,7 +38,7 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
 
   <section class="section section--flush" aria-labelledby="obra-titulo">
     <div class="wrap about-grid">
-      <BookCover lang={lang} />
+      <BookCover lang={lang} price />
       <div class="stack measure">
         <h2 id="obra-titulo">{b.aboutTitle}</h2>
         <p class="about-hook">{b.hook}</p>
@@ -51,6 +52,7 @@ const available = site.book.status === 'available' && site.book.buyUrl !== '';
       <h2 id="ficha-titulo">{b.factsTitle}</h2>
       <dl class="facts facts--row">
         {b.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+        {hasPrice() && <div><dt>{b.priceLabel}</dt><dd translate="no">{formatPrice()}</dd></div>}
         <div class="facts-wide">
           <dt>{b.narratorsLabel}</dt>
           <dd>

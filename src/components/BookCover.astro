@@ -3,18 +3,22 @@ import { copy } from '../content/copy';
 import { site } from '../config';
 import { cover } from '../cover';
 import { withBase } from '../url';
+import { formatPrice, hasPrice } from '../price';
 import type { Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
   small?: boolean;
+  price?: boolean;
 }
 
-const { lang, small = false } = Astro.props;
+const { lang, small = false, price = false } = Astro.props;
+const showPrice = price && hasPrice();
 const t = copy[lang];
 const sizes = small ? '(min-width: 56rem) 272px, 80vw' : '(min-width: 56rem) 416px, 90vw';
 ---
 
+<div class:list={[{ 'cover-wrap': showPrice }]}>
 {
   cover ? (
     <div class:list={['book-cover', { 'book-cover--small': small }]}>
@@ -29,3 +33,12 @@ const sizes = small ? '(min-width: 56rem) 272px, 80vw' : '(min-width: 56rem) 416
     </div>
   )
 }
+{
+  showPrice && (
+    <p class="price-tag">
+      <span class="price-tag__label">{t.home.priceTag}</span>
+      <span class="price-tag__value" translate="no">{formatPrice()}</span>
+    </p>
+  )
+}
+</div>

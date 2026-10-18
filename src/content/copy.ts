@@ -43,6 +43,7 @@ const pt = {
       'Um livro infantil que nasceu das histórias contadas por professores potiguaras da comunidade Catu, no Rio Grande do Norte, sobre a sua língua, a sua escola e o seu povo.',
     by: 'Texto de Jucinara de Melo Silva',
     illustratedBy: 'Ilustrações de Pingo',
+    priceTag: 'Pré-venda',
     presaleNote:
       'O livro está em pré-venda e, por enquanto, só está disponível pelo formulário deste site. Temos poucas unidades.',
     ctaPrimary: 'Quero meu exemplar',
@@ -79,6 +80,7 @@ const pt = {
     },
   },
   lead: {
+    priceLine: 'Valor de pré-venda: {price}. Retornaremos com as informações de pagamento e entrega.',
     title: 'Reserve seu exemplar na pré-venda',
     intro:
       'O livro está em pré-venda e, por enquanto, só está disponível pelo formulário abaixo. Temos poucas unidades. Deixe seu contato e retornaremos com as informações para garantir o seu. Usamos seus dados só para falar do livro e do projeto.',
@@ -125,6 +127,7 @@ const pt = {
     ],
     narratorsLabel: 'Narradores',
     factsTitle: 'Ficha do livro',
+    priceLabel: 'Preço de pré-venda',
     facts: [
       { label: 'Texto', value: 'Jucinara de Melo Silva' },
       { label: 'Ilustrações', value: 'Pingo' },
@@ -281,6 +284,7 @@ const es: Copy = {
       'Un libro infantil que nació de las historias contadas por profesores potiguaras de la comunidad Catu, en Río Grande del Norte (Brasil), sobre su lengua, su escuela y su pueblo.',
     by: 'Texto de Jucinara de Melo Silva',
     illustratedBy: 'Ilustraciones de Pingo',
+    priceTag: 'Preventa',
     presaleNote:
       'El libro está en preventa y, por ahora, solo está disponible mediante el formulario de este sitio. Tenemos pocas unidades.',
     ctaPrimary: 'Quiero mi ejemplar',
@@ -317,6 +321,7 @@ const es: Copy = {
     },
   },
   lead: {
+    priceLine: 'Precio de preventa: {price} (reales brasileños). Te escribiremos con la información de pago y entrega.',
     title: 'Reserva tu ejemplar en la preventa',
     intro:
       'El libro está en preventa y, por ahora, solo está disponible mediante el formulario de abajo. Tenemos pocas unidades. Deja tu contacto y te responderemos con la información para asegurar el tuyo. Usamos tus datos solo para hablarte del libro y del proyecto.',
@@ -363,6 +368,7 @@ const es: Copy = {
     ],
     narratorsLabel: 'Narradores',
     factsTitle: 'Ficha del libro',
+    priceLabel: 'Precio de preventa',
     facts: [
       { label: 'Texto', value: 'Jucinara de Melo Silva' },
       { label: 'Ilustraciones', value: 'Pingo' },

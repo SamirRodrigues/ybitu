@@ -1,6 +1,7 @@
 ---
 import LeadForm from './LeadForm.astro';
 import { copy } from '../content/copy';
+import { hasPrice, priceNote } from '../price';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -19,6 +20,7 @@ const t = copy[lang].lead;
     <div class="stack">
       <h2 id={`${id}-titulo`}>{title ?? t.title}</h2>
       <p class="lede">{intro ?? t.intro}</p>
+      {hasPrice() && <p class="lead-price">{priceNote(t.priceLine)}</p>}
     </div>
     <div>
       <LeadForm lang={lang} id={id} />
