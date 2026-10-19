@@ -26,7 +26,7 @@ const url = (l: Lang) => new URL(path(l, route), site.url).href;
 ---
 
 <!doctype html>
-<html lang={t.locale} style={`--papel-textura: url('${withBase('/textures/papel.webp')}')`}>
+<html lang={t.locale} style={`--papel-textura: url('${withBase('/textures/papel.webp')}'); --textura-amarelo: url('${withBase('/textures/papel-amarelo.webp')}'); --textura-ceu: url('${withBase('/textures/papel-ceu.webp')}'); --textura-pedra: url('${withBase('/textures/papel-pedra.webp')}'); --textura-tijolo: url('${withBase('/textures/papel-tijolo.webp')}')`}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />

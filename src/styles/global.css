@@ -430,22 +430,19 @@ a:hover {
 
 .section--sky {
   background-color: var(--ceu);
-  background-image: var(--papel-textura);
-  background-blend-mode: multiply;
+  background-image: var(--textura-ceu);
   background-size: 700px auto;
 }
 
 .section--stone {
   background-color: var(--azul-claro);
-  background-image: var(--papel-textura);
-  background-blend-mode: multiply;
+  background-image: var(--textura-pedra);
   background-size: 700px auto;
 }
 
 .section--brick {
   background-color: var(--tijolo);
-  background-image: var(--papel-textura);
-  background-blend-mode: multiply;
+  background-image: var(--textura-tijolo);
   background-size: 700px auto;
   color: #fff;
 }
@@ -473,8 +470,7 @@ a:hover {
 /* Herói */
 .hero {
   background-color: var(--amarelo);
-  background-image: var(--papel-textura);
-  background-blend-mode: multiply;
+  background-image: var(--textura-amarelo);
   background-size: 700px auto;
   padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3rem, 8vw, 6rem);
   overflow: clip;
@@ -1104,8 +1100,7 @@ a:hover {
   overflow: hidden;
   color: #fff;
   background-color: var(--tijolo);
-  background-image: var(--papel-textura);
-  background-blend-mode: multiply;
+  background-image: var(--textura-tijolo);
   background-size: 400px auto;
   box-shadow: 8px 12px 20px -8px rgba(74, 40, 20, 0.5);
 }
@@ -1113,6 +1108,8 @@ a:hover {
 .doc-cover--soon {
   color: var(--tinta);
   background-color: var(--capim-claro);
+  background-image: var(--papel-textura);
+  background-blend-mode: multiply;
 }
 
 .doc-cover--pedra {
